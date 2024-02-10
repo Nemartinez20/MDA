@@ -1,0 +1,346 @@
+:root {
+    --colorletratitulo: #19325B;
+    --colorbarra: rgb(0, 113, 102);
+    --colorbtns: #19325B;
+    --colorbtnsazul: #2566cf;
+    --coloruno: rgb(19, 209, 19);
+    --colordos: blue;
+    --colorseparador: #0b9795;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.titulo {
+    color: var(--colorletratitulo);
+    font-size: 28px;
+    line-height: 3;
+    font-weight: 700;
+}
+
+.barracolor {
+    background-color: var(--colorbarra);
+    color: white;
+
+}
+
+.barracolorl:hover {
+    background-color: var(--colorbarra);
+}
+
+body {
+    font-family: "Roboto", "Odoo Unicode Support Noto", sans-serif;
+
+}
+
+.btn_verdes {
+    background-color: var(--colorbtns);
+    color: white;
+    padding: 8px 5px;
+    border: none;
+    border-radius: 5px;
+
+
+}
+
+.btn_azul {
+    background-color: var(--colorbtnsazul);
+    color: white;
+    width: 120px;
+    margin-top: 50px;
+
+}
+
+.btn_verde {
+    background-color: var(--colorbtns);
+    color: white;
+    width: 120px;
+}
+
+caption {
+    color: var(--colorletratitulo);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h5 {
+    color: rgb(25, 119, 4);
+}
+
+.span_conultaticket {
+    font-weight: 700;
+}
+
+.categoria_caso {
+    background-color: orange;
+    font-size: 20px;
+    border-radius: 10%;
+}
+
+.uno1 {
+    background-color: var(--coloruno);
+    height: 15px;
+
+}
+
+.uno2 {
+    background-color: var(--colordos);
+    height: 15px;
+
+
+}
+
+.uno3 {
+    background-color: rgb(0, 255, 85);
+    height: 15px;
+
+}
+
+.reset {
+    all: revert;
+    gap: 1px;
+    border: 1px solid rgb(0, 102, 255);
+
+}
+
+.fiel {
+    border: none;
+}
+
+
+
+.color {
+    border-color: #da1103e5;
+    box-shadow: 0 0 0 0.2rem rgba(245, 39, 3, 0.25);
+}
+
+.colorborde {
+    border-color: #0367dae5;
+    box-shadow: 0 0 0 0.2rem rgba(3, 128, 245, 0.25);
+}
+
+.colortrue {
+    border-color: #35da03e5;
+    box-shadow: 0 0 0 0.2rem rgba(180, 245, 3, 0.25);
+}
+
+.error {
+    color: rgba(231, 15, 15, 0.767);
+}
+
+.alerta {
+    padding: 3px;
+    text-align: center;
+    width: 70%;
+    text-transform: uppercase;
+    color: white;
+    margin: 4px auto;
+
+}
+
+.error {
+    background-color: red;
+}
+
+.exito {
+    background-color: green;
+}
+
+.separadordiv {
+    background-color: var(--colorseparador);
+    height: 25px;
+    margin-top: 10px;
+}
+
+.formulario {
+    -webkit-box-shadow: -1px 2px 12px 2.5px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: -1px 2px 12px 2.5px rgba(0, 0, 0, 0.14);
+    box-shadow: -1px 2px 12px 2.5px rgba(0, 0, 0, 0.14);
+
+}
+
+#resultado {
+    margin-left: -30px;
+}
+
+.listaes {
+    list-style: none;
+    background-color: var(--colorseparador);
+    padding: 5px;
+    text-align: center;
+    margin-top: 4px;
+    border-radius: 5px;
+
+}
+
+.listaes:hover {
+    cursor: pointer;
+    background-color: darkseagreen;
+}
+
+.disflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cerrar_barra {
+    margin-right: 25px;
+}
+
+.lino {
+    list-style: none;
+}
+
+
+ul {
+    padding: 0px 0px;
+    border-radius: 5px;
+}
+
+.cerrarul {
+    margin-top: 10px;
+    right: 0;
+    padding: 0px;
+    margin-left: 100px;
+
+
+
+}
+
+.acerrar {
+
+    right: 0;
+    text-align: end;
+    padding: 8px 5px;
+    border-radius: 5px;
+    padding-right: 20px;
+
+}
+
+.licerrar {
+    left: 100px;
+}
+
+
+
+
+.firmasdiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: yellow; */
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.firmas {
+    /* border: 1px solid rgb(0, 119, 255); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas {
+    border: 1px solid rgb(3, 13, 61);
+    width: 98%;
+    height: 270px;
+
+
+}
+
+legend {
+    font-weight: 900;
+}
+
+.limpiarfirma {
+    text-decoration: none;
+    background-color: #e91046;
+    padding: 8px 12px;
+    width: 190px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+@media (max-width: 860px) {
+
+    .btn_verde {
+        width: 100px;
+        margin-left: 0px;
+    }
+
+    .btn_azul {
+        width: 100px;
+    }
+
+    .cerrar_barra {
+        margin-right: 0px;
+        margin-left: 10px;
+    }
+
+    .cerrarul {
+        margin-top: 10px;
+        right: 0;
+        margin-left: 0px;
+    }
+
+    .acerrar {
+        text-align: center;
+
+    }
+
+
+    .firmasdiv {
+
+        flex-direction: column;
+        /* background-color: #e91046; */
+    }
+
+
+    .canvas {
+        border: 1px solid rgb(3, 13, 61);
+        width: 530px;
+        height: 270px;
+
+
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .firmasdiv {
+
+        flex-direction: column;
+        /* background-color: #10e910; */
+    }
+
+
+    .btn_verde {
+        width: 270px;
+
+    }
+
+    .btn_azul {
+
+        width: 270px;
+    }
+
+    .canvas {
+        border: 1px solid rgb(3, 13, 61);
+        width: 300px;
+        height: 270px;
+        /* background-color: #5b3719; */
+
+    }
+
+}

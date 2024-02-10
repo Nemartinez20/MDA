@@ -1,0 +1,165 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDA</title>
+    <link rel="shortcut icon" href="img/6771CodeTutos.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/estilosonsite.css">
+</head>
+
+<body>
+    <!-----------------------------------------------------------------------------------------
+                                          INICIO
+    --------------------------------------------------------------------------------------------- -->
+
+    <div class="row">
+        <div class="col-4 bg-black" height="14px">s</div>
+        <div class="col-4 bg-black" height="14px"></div>
+        <div class="col-4 bg-black" height="14px"></div>
+
+    </div>
+    <!-----------------------------------------------------------------------------------------
+                                             ESCUDO
+        --------------------------------------------------------------------------------------------- -->
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-4 d-none d-md-block d-lg-block"><img src="img/CodeTutos.png" alt="" width="250px"
+                height="80px"></div>
+        <div class="col-sm-12 col-md-4 titulo">Control de Casos MDA</div>
+        <div class="col-sm-12 col-md-4 d-sm-inline-block"><img src="img/escudo_colombia.png" alt="" width="78px"
+                height="80px">
+        </div>
+    </div>
+
+    <!-----------------------------------------------------------------------------------------
+                                              BARRA DE NAVEGACION
+        --------------------------------------------------------------------------------------------- -->
+
+    <nav class="navbar navbar-ligth barracolor navbar-expand-lg ">
+        <div class="container-fluid  ">
+            <a href="" class="navbar-brand d-md-none">
+                <img src="img/CodeTutos.png" alt="" width="150px">
+            </a>
+            <!-- boton -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse   " id="menu">
+                <ul class="navbar-nav d-flex justify-content-evenly ">
+                    <li class="nav-item"><a href="index.html" class="nav-link barracolor">Inicio</a></li>
+                    <li class="nav-item"><a href="registrar.html" class="nav-link barracolor">Registrar Caso</a></li>
+                    <li class="nav-item"><a href="consulta.html" class="nav-link barracolor">Consultar caso</a></li>
+                    <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite</a></li>
+                    <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a> -->
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <!-----------------------------------------------------------------------------------------
+                                              final heaader
+        --------------------------------------------------------------------------------------------- -->
+
+    <main class="d-flex justify-content-center flex-column  m-auto">
+        <h3 class="my-4 text-center">Agregar Registro</h3>
+        <div class="container">
+            <form action="" class="formulario  row border border-dark p-3 mb-5 ">
+
+
+                <div class="col-12 col-md-6">
+                    <label for="Numero_caso" class="form-label">Numero de caso</label>
+                    <input type="text" class="form-control" name="Numero_caso" />
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="Solicitante" class="form-label">Solicitante</label>
+                    <input type="text-Area" class="form-control" name="Solicitante" />
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="Motivo" class="form-label">Motivo</label>
+                    <input type="text" class="form-control" name="Motivo" />
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="fecha_creacion" class="form-label">Fecha creacion</label>
+                    <input type="date" class="form-control" name="fecha_creacion" />
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="fecha_cierre" class="form-label">Fecha cierre</label>
+                    <input type="date" class="form-control" name="fecha_cierre" />
+                </div>
+
+
+
+                <div class="col-6">
+                    <label for="Categoria" class="form-label">Categoria</label>
+                    <input type="text" class="form-control" name="Categoria" />
+                </div>
+
+                <div class="col-6">
+                    <label for="Archivo" class="form-label">Archivo</label>
+                    <input type="file" class="form-control" name="Archivo" />
+                </div>
+                <div class="col-6">
+                    <label for="Descricion" class="form-label">Descricion</label>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+
+                <input type="submit" value="Agregar" class="btn btn_verde mt-3 col-2" />
+
+
+
+
+            </form>
+        </div>
+    </main>
+
+
+    <!-----------------------------------------------------------------------------------------
+                                           footer
+    --------------------------------------------------------------------------------------------- -->
+
+    <!-----------------------------------------------------------------------------------------
+                                           footer
+    --------------------------------------------------------------------------------------------- -->
+    <div class="footer-propidades p-4 barracolor">
+        <footer>
+
+            <div class="containercentro">
+                <div class="row text-center mb-2">
+                    <div class="c-redes d-flex justify-content-center gap-3">
+                        <p class="siguenos">Sígueme</p>
+                        <a href=""><img class="redes" src="img/facebook.svg" width="30" class="text-center"
+                                alt="" /></a>
+                        <a href=""><img class="redes" src="img/twitter.svg" width="30" class="text-center" alt="" /></a>
+                        <a href=""><img class="redes" src="img/youtube.svg" width="30" class="text-center" alt="" /></a>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <p>Copyright © 2023 Néstor Martínez. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+
+
+
+
+
+
+    <!-----------------------------------------------------------------------------------------
+                                           final
+    --------------------------------------------------------------------------------------------- -->
+
+    <script src="js/bundle.min.js"></script>
+
+</body>
+
+</html>
