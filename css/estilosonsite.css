@@ -250,15 +250,7 @@ textarea {
     height: 40px;
 }
 
-.firmasdiv {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
 
 .firmas {
     /* border: 1px solid rgb(0, 119, 255); */
@@ -310,7 +302,17 @@ label {
     text-align: center;
 }
 
+.firmasdiv {
+    display: flex;
+    flex-direction: column;
+}
 
+@media (min-width: 960px) {
+    .firmasdiv {
+        display: flex;
+        flex-direction: row;
+    }
+}
 
 /* @media (max-width: 760px) {
 

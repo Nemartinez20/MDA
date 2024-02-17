@@ -6,11 +6,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/estilosonsite.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
-        integrity="sha512-z8IYLHO8bTgFqj+yrPyIJnzBDf7DDhWwiEsk4sY+Oe6J2M+WQequeGS7qioI5vT6rXgVRb4K1UVQC5ER7MKzKQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +37,7 @@
 
     <nav class="navbar navbar-ligth barracolor navbar-expand-lg ">
         <div class="container-fluid  ">
-            <a href="" class="navbar-brand d-md-none">
+            <a href="7" class="navbar-brand d-md-none">
                 <img src="img/CodeTutos.png" alt="" width="150px">
             </a>
             <!-- boton -->
@@ -57,8 +52,8 @@
                     <li class="nav-item"><a href="registrar.html" class="nav-link barracolor">Registrar Caso</a></li>
                     <li class="nav-item"><a href="consulta.html" class="nav-link barracolor">Consultar caso</a></li>
                     <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite</a></li>
-                    <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a>
-                    </li> -->
+                    <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a> -->
+                    </li>
 
                 </ul>
             </div>
@@ -447,6 +442,15 @@
                     </div>
 
 
+
+
+
+
+                </fieldset>
+
+
+                <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                    <legend class="reset fiel">Calificacion de servicio </legend>
                     <div
                         class="row d-flex justify-content-evenly flex-wrap col-sm-11 col-md-11 col-lg-11 containecalificacion">
                         <p class="text-center titulos">Calificación del servicio</p>
@@ -518,39 +522,27 @@
 
                     </div>
 
+                </fieldset>
+                <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                    <legend class="reset fiel">Firmas </legend>
 
-                    <div class="container">
-                        <div class="col-sm-12  col-lg-6  firmas">
+                    <div class=" d-flex  flex-column">
+
+                        <div class="col-sm-12  col-lg-12 firmas">
                             <label for="Descricion" class="form-label">Firma del Ingeniero</label>
                             <canvas id="canvasinge" class="canvas"></canvas>
                             <a class="limpiarfirma" id="limpiaringe">Eliminar Firma</a>
                         </div>
-                        <div class="col-sm-12  col-lg-6  firmas">
+                        <div class="col-sm-12  col-lg-12 firmas">
                             <label for="Descricion" class="form-label">Firma del Cliente</label>
                             <canvas id="canvascliente" class="canvas "></canvas>
                             <a class="limpiarfirma" id="limpiarcliente">Eliminar Firma</a>
-
                         </div>
-                    </div>
 
+                    </div>
 
                 </fieldset>
 
-                <!-- 
-
-                <div class="row">
-                    <div class="col-sm-12  col-lg-6 border border-black"><label for="Descricion"
-                            class="form-label">Firma del
-                            Ingeniero</label>
-                        <canvas id="canvasinge" class="canvas"></canvas>
-                        <a class="limpiarfirma" id="limpiaringe">Eliminar Firma</a>
-                    </div>
-                    <div class="col-sm-12  col-lg-6 border border-black">
-                        <label for="Descricion" class="form-label">Firma del Cliente</label>
-                        <canvas id="canvascliente" class="canvas "></canvas>
-                        <a class="limpiarfirma" id="limpiarcliente">Eliminar Firma</a>
-                    </div>
-                </div> -->
 
 
                 <div>
@@ -591,6 +583,7 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script src="js/bundle.min.js"></script>
 
 </body>
 
