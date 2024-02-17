@@ -221,6 +221,14 @@ async function llenarPDF() {
     let observacioncliente = document.getElementById('observacioncliente').value;
     let recomendacionesing = document.getElementById('recomendacionesing').value;
 
+    //Calificacion
+    let calidisposicion = document.getElementById('calidisposicion').value;
+    let calconocimiento = document.getElementById('calconocimiento').value;
+    let caltiempo = document.getElementById('caltiempo').value;
+    let calinformacion = document.getElementById('calinformacion').value;
+
+    console.log(typeof (calidisposicion));
+
     // Verificar si se seleccionó una fecha y hora válida de solicitud
     if (fecha_creacion) {
         // Separar la fecha y la hora utilizando el método split
@@ -284,8 +292,8 @@ async function llenarPDF() {
     const image = await pdfDoc.embedPng(imageBytes);
 
     // Ajustar el ancho y alto de la imagen según sea necesario
-    const imageWidth = 155; // Ajusta el ancho de la imagen
-    const imageHeight = 50; // Ajusta el alto de la imagen
+    const imageWidth = 155; // Ajusta el ancho de la imagen FIRMA
+    const imageHeight = 57; // Ajusta el alto de la imagen FIRMA
 
     page.drawImage(image, {
         x: 400, // Posición X de la imagen
@@ -343,6 +351,65 @@ async function llenarPDF() {
     page.drawText(ingenieroasignado, { x: 115, y: 190 });
     page.drawText(ccsolicitante, { x: 365, y: 134 });
     page.drawText(cedulaingenieroasignado, { x: 50, y: 134 });
+
+
+    // Calificacion
+    calidisposicion1 = 'X'
+
+    if (calidisposicion === '1') {
+        page.drawText(calidisposicion1, { x: 475, y: 249 });
+    } else if (calidisposicion === '2') {
+        page.drawText(calidisposicion1, { x: 500, y: 249 });
+    } else if (calidisposicion === '3') {
+        page.drawText(calidisposicion1, { x: 529, y: 249 });
+    } else if (calidisposicion === '4') {
+        page.drawText(calidisposicion1, { x: 555, y: 249 });
+    } else if (calidisposicion === '5') {
+        page.drawText(calidisposicion1, { x: 580, y: 249 });
+    }
+    // Conocimiento
+    calconocimiento1 = 'X'
+
+    if (calconocimiento === '1') {
+        page.drawText(calconocimiento1, { x: 475, y: 239 });
+    } else if (calconocimiento === '2') {
+        page.drawText(calconocimiento1, { x: 500, y: 239 });
+    } else if (calconocimiento === '3') {
+        page.drawText(calconocimiento1, { x: 529, y: 239 });
+    } else if (calconocimiento === '4') {
+        page.drawText(calconocimiento1, { x: 555, y: 239 });
+    } else if (calconocimiento === '5') {
+        page.drawText(calconocimiento1, { x: 580, y: 239 });
+    }
+    // Conocimiento
+    caltiempo1 = 'X'
+
+    if (caltiempo === '1') {
+        page.drawText(caltiempo1, { x: 475, y: 229 });
+    } else if (caltiempo === '2') {
+        page.drawText(caltiempo1, { x: 500, y: 229 });
+    } else if (caltiempo === '3') {
+        page.drawText(caltiempo1, { x: 529, y: 229 });
+    } else if (caltiempo === '4') {
+        page.drawText(caltiempo1, { x: 555, y: 229 });
+    } else if (caltiempo === '5') {
+        page.drawText(caltiempo1, { x: 580, y: 229 });
+    }
+    // Conocimiento
+    calinformacion1 = 'X'
+
+    if (calinformacion === '1') {
+        page.drawText(calinformacion1, { x: 475, y: 219 });
+    } else if (calinformacion === '2') {
+        page.drawText(calinformacion1, { x: 500, y: 219 });
+    } else if (calinformacion === '3') {
+        page.drawText(calinformacion1, { x: 529, y: 219 });
+    } else if (calinformacion === '4') {
+        page.drawText(calinformacion1, { x: 555, y: 219 });
+    } else if (calinformacion === '5') {
+        page.drawText(calinformacion1, { x: 580, y: 219 });
+    }
+
 
 
 

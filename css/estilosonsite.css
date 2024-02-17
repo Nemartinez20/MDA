@@ -350,12 +350,12 @@ label {
 
     .firmas {
         border: 1px solid green;
-        width: 450px;
+        width: 480px;
     }
 
     .canvas {
         border: 1px solid rgb(3, 13, 61);
-        width: 450px;
+        width: 480px;
         height: 270px;
 
 
@@ -367,7 +367,7 @@ label {
 
     .firmas {
         border: 1px solid rgb(0, 34, 128);
-        width: 380px;
+        width: 335px;
         /* background-color: rgb(45, 0, 128); */
     }
 
@@ -381,7 +381,7 @@ label {
 
     .canvas {
         border: 1px solid rgb(3, 13, 61);
-        width: 380px;
+        width: 335px;
         height: 270px;
         /* background-color: #5b3719; */
 
