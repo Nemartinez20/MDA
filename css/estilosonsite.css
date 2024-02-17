@@ -102,7 +102,7 @@ h5 {
 .reset {
     all: revert;
     gap: 1px;
-    border: 1px solid rgb(0, 102, 255);
+    border: 1px solid black;
 
 }
 
@@ -203,6 +203,10 @@ ul {
     border-radius: 5px;
 }
 
+textarea {
+    height: 100px;
+}
+
 .cerrarul {
     margin-top: 10px;
     right: 0;
@@ -227,8 +231,24 @@ ul {
     left: 100px;
 }
 
+.containerElementos {
+    display: none;
+}
 
+.containerel {
+    margin-bottom: 10px;
+    display: none;
 
+}
+
+.mostrar {
+    display: block;
+}
+
+.imgborrarfirma {
+    width: 30px;
+    height: 40px;
+}
 
 .firmasdiv {
     display: flex;
@@ -237,6 +257,7 @@ ul {
     /* background-color: yellow; */
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .firmas {
@@ -250,7 +271,7 @@ ul {
 
 .canvas {
     border: 1px solid rgb(3, 13, 61);
-    width: 98%;
+    width: 99%;
     height: 270px;
 
 
@@ -258,17 +279,34 @@ ul {
 
 legend {
     font-weight: 900;
+
+}
+
+label {
+    font-weight: 600;
+}
+
+.titulos {
+    font-weight: 900;
+    font-size: 19px;
+}
+
+.containecalificacion {
+    margin-bottom: 10px;
+    margin-top: 25px;
+
 }
 
 .limpiarfirma {
     text-decoration: none;
-    background-color: #e91046;
+    background-color: #4ade80;
     padding: 8px 12px;
     width: 190px;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
     color: white;
+    text-align: center;
 }
 
 @media (max-width: 860px) {
@@ -337,7 +375,7 @@ legend {
 
     .canvas {
         border: 1px solid rgb(3, 13, 61);
-        width: 300px;
+        width: 380px;
         height: 270px;
         /* background-color: #5b3719; */
 

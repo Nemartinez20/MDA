@@ -72,8 +72,7 @@
     <main class="d-flex justify-content-center flex-column  m-auto">
         <h3 class="my-4 text-center">Onsite V1</h3>
         <div class="container">
-            <form id="form" action="" class="formulario  row border border-dark p-3 mb-5 " method="POST"
-                enctype="multipart/form-data">
+            <form id="form" action="" class="formulario  row  p-3 mb-5 " method="POST" enctype="multipart/form-data">
 
                 <!-- -------------------------------------------------------------------
                                        Datos del caso
@@ -111,13 +110,13 @@
                             id="seccional" />
                     </div>
 
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-5">
                         <label for="ccsolicitante" class="form-label">Cedula Solicitante</label>
                         <input type="number" class="form-control color" name="ccsolicitante" id="ccsolicitante" />
                     </div>
-                    <div class="mt-2">
-                        <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
-                    </div>
+                    <!-- <div class="mt-2">
+                    <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
+                </div> -->
 
                     <div class="col-12 col-md-5">
                         <label for="Solicitante" class="form-label">Solicitante</label>
@@ -168,7 +167,7 @@
                 <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap ">
                     <legend class="reset fiel"> Falla reportada </legend>
 
-                    <div class="col-12">
+                    <div class="col-11">
                         <label for="falla" class="form-label">Descripcion falla</label>
                         <textarea class="form-control color" aria-label="With textarea " name="falla"
                             id="falla"></textarea>
@@ -188,6 +187,19 @@
 
                 <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
                     <legend class="reset fiel"> Ingeniero Asignado </legend>
+                    <div class="col-12 col-md-5">
+                        <label for="ingenieroasignado" class="form-label">Ingeniero asignado</label>
+                        <input type="text" class="form-control color" name="ingenieroasignado" id="ingenieroasignado" />
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for="cedulaingenieroasignado" class="form-label">Cedula Ingeniero asignado</label>
+                        <input type="text" class="form-control color" name="cedulaingenieroasignado"
+                            id="cedulaingenieroasignado" />
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <label for="tiposervicio" class="form-label">Tipo de servicio</label>
+                        <input type="text" class="form-control color" name="tiposervicio" id="tiposervicio" />
+                    </div>
 
                     <div class="col-12 col-md-5">
                         <label for="fechaatencion" class="form-label">Fecha Atencion</label>
@@ -195,10 +207,6 @@
                             id="fechaatencion" />
                     </div>
 
-                    <div class="col-12 col-md-5">
-                        <label for="ingenieroasignado" class="form-label">Ingeniero asignado</label>
-                        <input type="text" class="form-control color" name="ingenieroasignado" id="ingenieroasignado" />
-                    </div>
 
                 </fieldset>
 
@@ -215,13 +223,13 @@
                     <legend class="reset fiel"> Datos del Equipo </legend>
 
 
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-5">
                         <label for="serialequipo" class="form-label">Serial Equipo</label>
                         <input type="text" class="form-control color" name="serialequipo" id="serialequipo" />
                     </div>
-                    <div class="mt-2">
-                        <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
-                    </div>
+                    <!-- <div class="mt-2">
+                    <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
+                </div> -->
 
                     <div class="col-12 col-md-5">
                         <label for="placaequipo" class="form-label">Placa Equipo</label>
@@ -249,7 +257,7 @@
                     </div>
 
                     <div class="col-12 col-md-5">
-                        <label for="versionantivirus" class="form-label">Verssion Antivirus</label>
+                        <label for="versionantivirus" class="form-label">Version Antivirus</label>
                         <input type="text" class="form-control color" name="versionantivirus" id="versionantivirus" />
                     </div>
 
@@ -270,15 +278,135 @@
                 <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
                     <legend class="reset fiel"> Elemetos de soporte </legend>
 
-                    <div class="col-12 col-md-5">
-                        <label for="fecha_cierre" class="form-label">Fecha Atencion</label>
-                        <input type="datetime-local" class="form-control " name="fecha_cierre" />
+                    <div class="form-check col-12 col-md-3">
+                        <label class="form-check-label" for="opcionsi">Si</label>
+                        <input class="form-check-input" type="radio" name="opcioneElemento" value="1" id="opcionsi">
+                    </div>
+                    <div class="form-check col-12 col-md-3">
+                        <label class="form-check-label" for="opcionno">No</label>
+                        <input class="form-check-input" type="radio" id="opcionno" name="opcioneElemento" value="2"
+                            checked>
                     </div>
 
-                    <div class="col-12 col-md-5">
-                        <label for="Motivo" class="form-label">Ingeniero asignado</label>
-                        <input type="text" class="form-control " name="motivo" placeholder="Nestor Martinez" />
+                    <div class="form-check col-12 col-md-3">
+                        <label class="form-check-label" for="opcionna">No Aplica</label>
+                        <input class="form-check-input" type="radio" name="opcioneElemento" value="3" id="opcionna">
                     </div>
+
+                    <div class="containerElementos">
+
+
+                        <div class="col-12 col-md-12">
+                            <label for="Motivo" class="form-label">Elementos </label>
+
+                        </div>
+
+                        <div class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+
+
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementocpu">Cpu</label>
+                                <input class="form-check-input" type="radio" id="elementocpu" name="option1" value="X">
+                            </div>
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementomonitor">Monitor</label>
+                                <input class="form-check-input" type="radio" id="elementomonitor" name="option1"
+                                    value="X">
+                            </div>
+
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementoteclado">Teclado</label>
+                                <input class="form-check-input" type="radio" id="elementoteclado" name="option1"
+                                    value="X">
+                            </div>
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementomouse">Mouse</label>
+                                <input class="form-check-input" type="radio" id="elementomouse" name="option1"
+                                    value="X">
+                            </div>
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementoservidor">Servidor</label>
+                                <input class="form-check-input" type="radio" id="elementoservidor" name="option1"
+                                    value="X">
+                            </div>
+
+                            <div class="form-check col-5 col-md-3">
+                                <label class="form-check-label" for="elementootro">Otro</label>
+                                <input class="form-check-input" type="radio" id="elementootro" name="option1"
+                                    value="otro">
+                            </div>
+
+
+
+
+                            <div class="col-11 col-md-11 containerel">
+                                <div class="col-12 col-md-5 ">
+                                    <label for="marcaelemento" class="form-label">Cual?</label>
+                                    <input type="text" class="form-control color" name="marcaelemento"
+                                        id="marcaelemento" />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="w-100 d-flex justify-content-evenly flex-wrap">
+
+
+
+
+                            <div class="col-12 col-md-5">
+                                <label for="marcaelemento" class="form-label">Marca</label>
+                                <input type="text" class="form-control color" name="marcaelemento" id="marcaelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="modeloequipo" class="form-label">Modelo</label>
+                                <input type="text" class="form-control color" name="modeloequipo" id="modeloequipo" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="Placaelemento" class="form-label">Placa</label>
+                                <input type="text" class="form-control color" name="Placaelemento" id="Placaelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="seialelemento" class="form-label">Serial</label>
+                                <input type="text" class="form-control color" name="seialelemento" id="seialelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="sistemaoperativoel" class="form-label">Sistema operativo</label>
+                                <input type="text" class="form-control color" name="sistemaoperativoel"
+                                    id="sistemaoperativoel" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="memoriaelemento" class="form-label">Memoria</label>
+                                <input type="text" class="form-control color" name="memoriaelemento"
+                                    id="memoriaelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="discoelemento" class="form-label">Disco</label>
+                                <input type="text" class="form-control color" name="discoelemento" id="discoelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="procesadorelemento" class="form-label">Procesador</label>
+                                <input type="text" class="form-control color" name="procesadorelemento"
+                                    id="procesadorelemento" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="tipoequipoel" class="form-label">Tipo Equipo</label>
+                                <input type="text" class="form-control color" name="tipoequipoel" id="tipoequipoel" />
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <label for="nombreequipo" class="form-label">Nombre Equipo</label>
+                                <input type="text" class="form-control color" name="nombreequipo" id="nombreequipo" />
+                            </div>
+
+                            <div class="col-12 col-md-5">
+                                <!-- <label for="versionantivirus" class="form-label">Nombre Equipo</label>
+                    <input type="text" class="form-control color" name="versionantivirus" id="versionantivirus" /> -->
+                            </div>
+                        </div>
+                    </div>
+
 
                 </fieldset>
 
@@ -295,40 +423,111 @@
                 <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
                     <legend class="reset fiel"> Descripcion del servicio </legend>
 
-                    <div class="col-12">
+                    <div class="col-11  ">
                         <label for="diagnostico" class="form-label">Informacion de Diagnostico</label>
                         <textarea class="form-control color" aria-label="With textarea" name="diagnostico"
                             id="diagnostico"></textarea>
                     </div>
-                    <div class="col-12">
+                    <div class="col-11  ">
                         <label for="solucion" class="form-label">Solucion Entregada</label>
                         <textarea class="form-control color" aria-label="With textarea" name="solucion"
                             id="solucion"></textarea>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-11  ">
                         <label for="observacioncliente" class="form-label">Observacion del Cliente</label>
                         <textarea class="form-control color" aria-label="With textarea" name="observacioncliente"
                             id="observacioncliente"></textarea>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-11  ">
                         <label for="recomendacionesing" class="form-label">Recomendaciones del ingeniero</label>
                         <textarea class="form-control color" aria-label="With textarea" name="recomendacionesing"
                             id="recomendacionesing"></textarea>
                     </div>
 
 
+                    <div
+                        class="row d-flex justify-content-evenly flex-wrap col-sm-11 col-md-11 col-lg-11 containecalificacion">
+                        <p class="text-center titulos">Calificación del servicio</p>
+                        <span>
+                            Por favor marque con una X las siguientes preguntas considerando 1 como la mínima
+                            calificación y 5 como la máxima calificación de acuerdo al grado de satisfacción que se
+                            encuentra con el servicio prestado</span>
+
+
+
+
+                        <div class="col-sm-10 col-md-4 col-lg-5 ">
+                            <label for="campo" class="form-label">Disposición para atención de servicio del
+                                ingeniero:</label>
+                            <select class="form-control" id="buscadorl" name="fksolicitante1">
+                                <option value="">--Selecione--</option>
+
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="col-sm-10 col-md-4 col-lg-5 ">
+                            <label for="campo" class="form-label">Conocimiento técnico del ingeniero:</label>
+                            <select class="form-control" id="buscadorl" name="fksolicitante1">
+                                <option value="">--Selecione--</option>
+
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-sm-10 col-md-4 col-lg-5 ">
+                            <label for="campo" class="form-label">Tiempo de atención y solución:</label>
+                            <select class="form-control" id="buscadorl" name="fksolicitante1">
+                                <option value="">--Selecione--</option>
+
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-sm-10 col-md-4 col-lg-5 ">
+                            <label for="campo" class="form-label">Información del avance del caso:</label>
+                            <select class="form-control" id="buscadorl" name="fksolicitante1">
+                                <option value="">--Selecione--</option>
+
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+
+                            </select>
+                        </div>
+
+                    </div>
                     <div class="col-12 firmasdiv">
                         <div class="col-5 firmas">
                             <label for="Descricion" class="form-label">Firma del Ingeniero</label>
                             <canvas id="canvasinge" class="canvas"></canvas>
-                            <a class="limpiarfirma" id="limpiaringe">Borrar Firma ingeniero</a>
+                            <a class="limpiarfirma" id="limpiaringe">Eliminar Firma</a>
                         </div>
                         <div class="col-5 firmas">
                             <label for="Descricion" class="form-label">Firma del Cliente</label>
                             <canvas id="canvascliente" class="canvas "></canvas>
-                            <a class="limpiarfirma" id="limpiarcliente">Borrar Firma Cliente</a>
+                            <a class="limpiarfirma" id="limpiarcliente">Eliminar Firma</a>
+
                         </div>
                     </div>
                 </fieldset>

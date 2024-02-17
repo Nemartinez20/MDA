@@ -1,7 +1,9 @@
 
 
 
+
 let signaturePad = null;
+//Boton Generar
 const llenar = document.querySelector('#btngenerarpdf');
 
 let ncaso = document.getElementById('ncaso');
@@ -17,6 +19,8 @@ let despacho = document.getElementById('despacho');
 let falla = document.getElementById('falla');
 let fechaatencion = document.getElementById('fechaatencion');
 let ingenieroasignado = document.getElementById('ingenieroasignado');
+let cedulaingenieroasignado = document.getElementById('cedulaingenieroasignado');
+let tiposervicio = document.getElementById('tiposervicio');
 let placaequipo = document.getElementById('placaequipo');
 let serialequipo = document.getElementById('serialequipo');
 let marcaequipo = document.getElementById('marcaequipo');
@@ -30,24 +34,30 @@ let observacioncliente = document.getElementById('observacioncliente');
 let recomendacionesing = document.getElementById('recomendacionesing');
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    const canvasFirmaIngeniero = document.querySelector('#canvasinge');
-    canvasFirmaIngeniero.height = canvasFirmaIngeniero.offsetHeight;
-    canvasFirmaIngeniero.width = canvasFirmaIngeniero.offsetWidth;
 
-    const canvasFirmaCliente = document.querySelector('#canvascliente');
-    canvasFirmaCliente.height = canvasFirmaCliente.offsetHeight;
-    canvasFirmaCliente.width = canvasFirmaCliente.offsetWidth;
-
-
-    signaturePad = new SignaturePad(canvasFirmaCliente, {});
-    signaturePad2 = new SignaturePad(canvasFirmaIngeniero, {});
+document.addEventListener('DOMContentLoaded', function () {
+    firmarDocumento();
+    eventos();
 
     llenar.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('sadasdas')
         llenarPDF();
     });
+
+    limpiarFirmasUsuario();
+});
+
+
+function eventos() {
+    //Muestra campos condicionales  de si si se usa elenmentos de soporte
+    const metodoContacto = document.querySelectorAll('input[name="opcioneElemento"]');
+    metodoContacto.forEach(input => (input.addEventListener('click', mostrarMetodoSeleccionadoElemento)));
+
+
+
+    //Muestra campos condicionales de los elemntos
+    const inputRadioOtro = document.querySelectorAll('input[name="option1"]');
+    inputRadioOtro.forEach(input => (input.addEventListener('click', mostrarCampoOtro)));
 
 
     //Estilos input
@@ -90,6 +100,12 @@ window.addEventListener('DOMContentLoaded', () => {
     ingenieroasignado.addEventListener('input', () => {
         cambiarEstilo(ingenieroasignado);
     })
+    cedulaingenieroasignado.addEventListener('input', () => {
+        cambiarEstilo(cedulaingenieroasignado);
+    })
+    tiposervicio.addEventListener('input', () => {
+        cambiarEstilo(tiposervicio);
+    })
     placaequipo.addEventListener('input', () => {
         cambiarEstilo(placaequipo);
     })
@@ -123,16 +139,7 @@ window.addEventListener('DOMContentLoaded', () => {
     recomendacionesing.addEventListener('input', () => {
         cambiarEstilo(recomendacionesing);
     })
-
-
-
-});
-
-
-
-
-
-
+}
 
 function cambiarEstilo(el) {
     //Estilos input
@@ -143,8 +150,50 @@ function cambiarEstilo(el) {
     }
 
 }
+function mostrarMetodoSeleccionadoElemento(e) {
+
+    const containerElementos = document.querySelector('.containerElementos');
+
+    if (e.target.value === '1') {
+
+        containerElementos.style.display = "block";
+    } else {
+        containerElementos.style.display = "none";
+
+    }
+
+}
+
+function mostrarCampoOtro(e) {
+    const containerElementoOtro = document.querySelector('.containerel');
+
+    if (e.target.value === 'otro') {
+        containerElementoOtro.classList.add('mostrar');
+    } else if (e.target.value === 'X') {
+        containerElementoOtro.classList.remove('mostrar');
+    }
+
+}
+
+
+function firmarDocumento() {
+
+    const canvasFirmaIngeniero = document.querySelector('#canvasinge');
+    canvasFirmaIngeniero.height = canvasFirmaIngeniero.offsetHeight;
+    canvasFirmaIngeniero.width = canvasFirmaIngeniero.offsetWidth;
+
+    const canvasFirmaCliente = document.querySelector('#canvascliente');
+    canvasFirmaCliente.height = canvasFirmaCliente.offsetHeight;
+    canvasFirmaCliente.width = canvasFirmaCliente.offsetWidth;
+
+
+    signaturePad = new SignaturePad(canvasFirmaCliente, {});
+    signaturePad2 = new SignaturePad(canvasFirmaIngeniero, {});
+}
 
 async function llenarPDF() {
+
+
     let ncaso = document.getElementById('ncaso').value;
     let fecha_creacion = document.getElementById('fecha_creacion').value;
     let seccional = document.getElementById('seccional').value;
@@ -158,6 +207,8 @@ async function llenarPDF() {
     let falla = document.getElementById('falla').value;
     let fechaatencion = document.getElementById('fechaatencion').value;
     let ingenieroasignado = document.getElementById('ingenieroasignado').value;
+    let cedulaingenieroasignado = document.getElementById('cedulaingenieroasignado').value;
+    let tiposervicio = document.getElementById('tiposervicio').value;
     let placaequipo = document.getElementById('placaequipo').value;
     let serialequipo = document.getElementById('serialequipo').value;
     let marcaequipo = document.getElementById('marcaequipo').value;
@@ -261,7 +312,6 @@ async function llenarPDF() {
 
 
 
-    const cedulaingniero = '1055228772';
     page.drawText(ncaso, { x: 100, y: 789 });
     page.drawText(fechaaperturadecaso, { x: 100, y: 774 });
     page.drawText(horaaperturadecaso, { x: 287, y: 774 });
@@ -277,6 +327,7 @@ async function llenarPDF() {
     page.drawText(fechaatenciondecaso, { x: 93, y: 627 });
     page.drawText(horaatenciondecaso, { x: 345, y: 627 });
     page.drawText(ingenieroasignado, { x: 93, y: 617 });
+    page.drawText(tiposervicio, { x: 345, y: 617 });
     page.drawText(placaequipo, { x: 93, y: 593 });
     page.drawText(serialequipo, { x: 341, y: 593 });
     page.drawText(marcaequipo, { x: 93, y: 584 });
@@ -291,7 +342,7 @@ async function llenarPDF() {
     page.drawText(solicitante, { x: 400, y: 190 });
     page.drawText(ingenieroasignado, { x: 115, y: 190 });
     page.drawText(ccsolicitante, { x: 365, y: 134 });
-    page.drawText(cedulaingniero, { x: 50, y: 134 });
+    page.drawText(cedulaingenieroasignado, { x: 50, y: 134 });
 
 
 
@@ -303,28 +354,30 @@ async function llenarPDF() {
     downloadLink.click();
 }
 
-//Borrar firmas
-const limpiaringe = document.getElementById("limpiaringe");
-limpiaringe.addEventListener('click', () => {
-    limpiarFirma2();
+function limpiarFirmasUsuario() {
+    //Borrar firmas
+    const limpiaringe = document.getElementById("limpiaringe");
+    limpiaringe.addEventListener('click', () => {
+        limpiarFirma2();
 
 
-});
-const limpiarcliente = document.getElementById("limpiarcliente");
-limpiarcliente.addEventListener('click', () => {
-    limpiarFirma();
+    });
+    const limpiarcliente = document.getElementById("limpiarcliente");
+    limpiarcliente.addEventListener('click', () => {
+        limpiarFirma();
 
 
-});
-function limpiarFirma() {
-    // Limpia el canvas
-    signaturePad.clear();
+    });
+    function limpiarFirma() {
+        // Limpia el canvas
+        signaturePad.clear();
+    }
+    function limpiarFirma2() {
+        // Limpia el canvas
+        signaturePad2.clear();
+    }
+
 }
-function limpiarFirma2() {
-    // Limpia el canvas
-    signaturePad2.clear();
-}
-
 
 function convertirHora12(hora24) {
     const [hora, minutos] = hora24.split(':');
