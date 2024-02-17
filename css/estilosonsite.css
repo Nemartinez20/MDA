@@ -261,7 +261,7 @@ textarea {
 }
 
 .firmas {
-    /* border: 1px solid rgb(0, 119, 255); */
+    border: 1px solid rgb(0, 119, 255);
 
     display: flex;
     flex-direction: column;
@@ -271,7 +271,7 @@ textarea {
 
 .canvas {
     border: 1px solid rgb(3, 13, 61);
-    width: 99%;
+    width: 100%;
     height: 270px;
 
 
@@ -309,6 +309,11 @@ label {
     text-align: center;
 }
 
+
+*body {
+    background-color: #19325B;
+}
+
 @media (max-width: 860px) {
 
     .btn_verde {
@@ -343,10 +348,14 @@ label {
         /* background-color: #e91046; */
     }
 
+    .firmas {
+        border: 1px solid green;
+        width: 450px;
+    }
 
     .canvas {
         border: 1px solid rgb(3, 13, 61);
-        width: 530px;
+        width: 450px;
         height: 270px;
 
 
@@ -356,12 +365,27 @@ label {
 
 @media (max-width: 480px) {
 
+    .firmas {
+        border: 1px solid rgb(0, 34, 128);
+        width: 380px;
+        /* background-color: rgb(45, 0, 128); */
+    }
+
     .firmasdiv {
 
         flex-direction: column;
         /* background-color: #10e910; */
     }
 
+
+
+    .canvas {
+        border: 1px solid rgb(3, 13, 61);
+        width: 380px;
+        height: 270px;
+        /* background-color: #5b3719; */
+
+    }
 
     .btn_verde {
         width: 270px;
@@ -372,13 +396,4 @@ label {
 
         width: 270px;
     }
-
-    .canvas {
-        border: 1px solid rgb(3, 13, 61);
-        width: 380px;
-        height: 270px;
-        /* background-color: #5b3719; */
-
-    }
-
 }
