@@ -459,7 +459,7 @@
                     <div
                         class="row d-flex justify-content-evenly flex-wrap col-sm-11 col-md-11 col-lg-11 containecalificacion">
                         <p class="text-center titulos">Calificación del servicio</p>
-                        <span>
+                        <span class="espacio">
                             Por favor marque con una X las siguientes preguntas considerando 1 como la mínima
                             calificación y 5 como la máxima calificación de acuerdo al grado de satisfacción que se
                             encuentra con el servicio prestado</span>
@@ -468,7 +468,7 @@
 
 
                         <div class="col-sm-10 col-md-4 col-lg-5 ">
-                            <label for="calidisposicion" class="form-label espacio">Disposición para atención de
+                            <label for="calidisposicion" class="form-label ">Disposición para atención de
                                 servicio del
                                 ingeniero:</label>
                             <select class="form-control calidisposicion" id="calidisposicion" name="calidisposicion">
@@ -532,14 +532,14 @@
                 <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
                     <legend class="reset fiel">Firmas </legend>
 
-                    <div class="">
+                    <div class="container d-flex flex-column firmasdiv">
 
-                        <div class="col-sm-12  col-lg-12 firmas">
+                        <div class="col-sm-12 col-md-10 col-lg-9 firmas">
                             <label for="Descricion" class="form-label">Firma del Ingeniero</label>
                             <canvas id="canvasinge" class="canvas"></canvas>
                             <a class="limpiarfirma" id="limpiaringe">Eliminar Firma</a>
                         </div>
-                        <div class="col-sm-12  col-lg-12 firmas">
+                        <div class="col-sm-12 col-md-10 col-lg-9 firmas">
                             <label for="Descricion" class="form-label">Firma del Cliente</label>
                             <canvas id="canvascliente" class="canvas "></canvas>
                             <a class="limpiarfirma" id="limpiarcliente">Eliminar Firma</a>
