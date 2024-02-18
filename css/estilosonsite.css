@@ -307,6 +307,10 @@ label {
     flex-direction: column;
 }
 
+.espacio {
+    margin-top: 20px;
+}
+
 @media (min-width: 960px) {
     .firmasdiv {
         display: flex;

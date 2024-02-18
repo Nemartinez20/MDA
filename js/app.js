@@ -280,6 +280,7 @@ async function llenarPDF() {
     const page = pdfDoc.getPages()[0];
     page.setSize(...legalPageSize);
     page.setFontSize(9);
+    const fontSize = 12;
 
 
     // Agregar texto a la página del PDF
@@ -293,11 +294,11 @@ async function llenarPDF() {
 
     // Ajustar el ancho y alto de la imagen según sea necesario
     const imageWidth = 155; // Ajusta el ancho de la imagen FIRMA
-    const imageHeight = 57; // Ajusta el alto de la imagen FIRMA
+    const imageHeight = 54; // Ajusta el alto de la imagen FIRMA
 
     page.drawImage(image, {
         x: 400, // Posición X de la imagen
-        y: 140, // Posición Y de la imagen
+        y: 138, // Posición Y de la imagen
         width: imageWidth,
         height: imageHeight,
     });
@@ -309,7 +310,7 @@ async function llenarPDF() {
 
     // Ajustar el ancho y alto de la imagen según sea necesario
     const imageWidth2 = 170; // Ajusta el ancho de la imagen
-    const imageHeight2 = 50; // Ajusta el alto de la imagen
+    const imageHeight2 = 54; // Ajusta el alto de la imagen
 
     page.drawImage(image2, {
         x: 90, // Posición X de la imagen
@@ -319,6 +320,19 @@ async function llenarPDF() {
     });
 
 
+    // const maxWidth = 500; // Ancho máximo de la línea en unidades de PDF
+    // const lines = splitTextIntoLines(falla, page, fontSize, maxWidth);
+
+
+
+    // // Agregar las líneas de texto al documento
+    // page.drawText(falla, { x: 22, y: 688 });
+
+
+    // for (const line of lines) {
+    //     page.drawText(line, { x: 22, y: 688, size: fontSize });
+    //     y -= fontSize + 2; // Ajusta la posición y para la siguiente línea
+    // }
 
     page.drawText(ncaso, { x: 100, y: 789 });
     page.drawText(fechaaperturadecaso, { x: 100, y: 774 });
@@ -420,6 +434,8 @@ async function llenarPDF() {
     downloadLink.download = `Onsite_${ncaso}.pdf`;
     downloadLink.click();
 }
+
+
 
 function limpiarFirmasUsuario() {
     //Borrar firmas

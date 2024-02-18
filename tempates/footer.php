@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="row text-center">
-                    <p>Copyright © 2023 Néstor Martínez. All rights reserved.</p>
+                    <p>Copyright © <?php echo date('Y'); ?> Néstor Martínez. All rights reserved.</p>
                 </div>
             </div>
         </footer>
