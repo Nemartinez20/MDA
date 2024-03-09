@@ -293,12 +293,12 @@ async function llenarPDF() {
     const image = await pdfDoc.embedPng(imageBytes);
 
     // Ajustar el ancho y alto de la imagen según sea necesario
-    const imageWidth = 185; // Ajusta el ancho de la imagen FIRMA Cliente
-    const imageHeight = 54; // Ajusta el alto de la imagen FIRMA Cliente
+    const imageWidth = 155; // Ajusta el ancho de la imagen FIRMA
+    const imageHeight = 54; // Ajusta el alto de la imagen FIRMA
 
     page.drawImage(image, {
-        x: 350, // Posición X de la imagen
-        y: 122, // Posición Y de la imagen
+        x: 400, // Posición X de la imagen
+        y: 138, // Posición Y de la imagen
         width: imageWidth,
         height: imageHeight,
     });
@@ -314,7 +314,7 @@ async function llenarPDF() {
 
     page.drawImage(image2, {
         x: 90, // Posición X de la imagen
-        y: 122, // Posición Y de la imagen
+        y: 140, // Posición Y de la imagen
         width: imageWidth2,
         height: imageHeight2,
     });
@@ -334,94 +334,94 @@ async function llenarPDF() {
     //     y -= fontSize + 2; // Ajusta la posición y para la siguiente línea
     // }
 
-    page.drawText(ncaso, { x: 110, y: 805 });
-    page.drawText(fechaaperturadecaso, { x: 102, y: 794 });
-    page.drawText(horaaperturadecaso, { x: 287, y: 794 });
-    page.drawText(seccional, { x: 92, y: 767 });
-    page.drawText(ccsolicitante, { x: 100, y: 754 });
-    page.drawText(solicitante, { x: 355, y: 767 });
-    page.drawText(ciudad, { x: 355, y: 754 });
-    page.drawText(direccion, { x: 100, y: 743 });
-    page.drawText(telefono, { x: 355, y: 743 });
-    page.drawText(email, { x: 100, y: 732 });
-    page.drawText(despacho, { x: 347, y: 732 });
-    page.drawText(falla, { x: 22, y: 708 });
-    page.drawText(fechaatenciondecaso, { x: 110, y: 647 });
-    page.drawText(horaatenciondecaso, { x: 345, y: 647 });
-    page.drawText(ingenieroasignado, { x: 100, y: 634 });
-    page.drawText(tiposervicio, { x: 345, y: 634 });
-    page.drawText(placaequipo, { x: 100, y: 608 });
-    page.drawText(serialequipo, { x: 341, y: 608 });
-    page.drawText(marcaequipo, { x: 100, y: 596 });
-    page.drawText(modeloequipo, { x: 341, y: 596 });
-    page.drawText(sistemaoperativo, { x: 100, y: 585 });
-    page.drawText(antivirus, { x: 340, y: 585 });
-    page.drawText(versionantivirus, { x: 526, y: 585 });
-    page.drawText(diagnostico, { x: 149, y: 486 });
-    page.drawText(solucion, { x: 117, y: 426 });
-    page.drawText(observacioncliente, { x: 145, y: 352 });
-    page.drawText(recomendacionesing, { x: 24, y: 282 });
-    page.drawText(solicitante, { x: 390, y: 182 });
-    page.drawText(ingenieroasignado, { x: 115, y: 182 });
-    page.drawText(ccsolicitante, { x: 365, y: 101 });
-    page.drawText(cedulaingenieroasignado, { x: 60, y: 101 });
+    page.drawText(ncaso, { x: 100, y: 789 });
+    page.drawText(fechaaperturadecaso, { x: 100, y: 774 });
+    page.drawText(horaaperturadecaso, { x: 287, y: 774 });
+    page.drawText(seccional, { x: 93, y: 747 });
+    page.drawText(ccsolicitante, { x: 93, y: 734 });
+    page.drawText(solicitante, { x: 384, y: 747 });
+    page.drawText(ciudad, { x: 384, y: 734 });
+    page.drawText(direccion, { x: 93, y: 721 });
+    page.drawText(telefono, { x: 384, y: 721 });
+    page.drawText(email, { x: 93, y: 710 });
+    page.drawText(despacho, { x: 384, y: 710 });
+    page.drawText(falla, { x: 22, y: 688 });
+    page.drawText(fechaatenciondecaso, { x: 93, y: 627 });
+    page.drawText(horaatenciondecaso, { x: 345, y: 627 });
+    page.drawText(ingenieroasignado, { x: 93, y: 617 });
+    page.drawText(tiposervicio, { x: 345, y: 617 });
+    page.drawText(placaequipo, { x: 93, y: 593 });
+    page.drawText(serialequipo, { x: 341, y: 593 });
+    page.drawText(marcaequipo, { x: 93, y: 584 });
+    page.drawText(modeloequipo, { x: 341, y: 584 });
+    page.drawText(sistemaoperativo, { x: 93, y: 565 });
+    page.drawText(antivirus, { x: 384, y: 565 });
+    page.drawText(versionantivirus, { x: 450, y: 565 });
+    page.drawText(diagnostico, { x: 132, y: 448 });
+    page.drawText(solucion, { x: 102, y: 387 });
+    page.drawText(observacioncliente, { x: 134, y: 327 });
+    page.drawText(recomendacionesing, { x: 24, y: 287 });
+    page.drawText(solicitante, { x: 400, y: 190 });
+    page.drawText(ingenieroasignado, { x: 115, y: 190 });
+    page.drawText(ccsolicitante, { x: 365, y: 134 });
+    page.drawText(cedulaingenieroasignado, { x: 50, y: 134 });
 
 
     // Calificacion
     calidisposicion1 = 'X'
 
     if (calidisposicion === '1') {
-        page.drawText(calidisposicion1, { x: 475, y: 230 });
+        page.drawText(calidisposicion1, { x: 475, y: 249 });
     } else if (calidisposicion === '2') {
-        page.drawText(calidisposicion1, { x: 500, y: 230 });
+        page.drawText(calidisposicion1, { x: 500, y: 249 });
     } else if (calidisposicion === '3') {
-        page.drawText(calidisposicion1, { x: 529, y: 230 });
+        page.drawText(calidisposicion1, { x: 529, y: 249 });
     } else if (calidisposicion === '4') {
-        page.drawText(calidisposicion1, { x: 555, y: 230 });
+        page.drawText(calidisposicion1, { x: 555, y: 249 });
     } else if (calidisposicion === '5') {
-        page.drawText(calidisposicion1, { x: 577, y: 230 });
+        page.drawText(calidisposicion1, { x: 580, y: 249 });
     }
     // Conocimiento
     calconocimiento1 = 'X'
 
     if (calconocimiento === '1') {
-        page.drawText(calconocimiento1, { x: 475, y: 218 });
+        page.drawText(calconocimiento1, { x: 475, y: 239 });
     } else if (calconocimiento === '2') {
-        page.drawText(calconocimiento1, { x: 500, y: 218 });
+        page.drawText(calconocimiento1, { x: 500, y: 239 });
     } else if (calconocimiento === '3') {
-        page.drawText(calconocimiento1, { x: 529, y: 218 });
+        page.drawText(calconocimiento1, { x: 529, y: 239 });
     } else if (calconocimiento === '4') {
-        page.drawText(calconocimiento1, { x: 555, y: 218 });
+        page.drawText(calconocimiento1, { x: 555, y: 239 });
     } else if (calconocimiento === '5') {
-        page.drawText(calconocimiento1, { x: 577, y: 218 });
+        page.drawText(calconocimiento1, { x: 580, y: 239 });
     }
     // Conocimiento
     caltiempo1 = 'X'
 
     if (caltiempo === '1') {
-        page.drawText(caltiempo1, { x: 475, y: 206 });
+        page.drawText(caltiempo1, { x: 475, y: 229 });
     } else if (caltiempo === '2') {
-        page.drawText(caltiempo1, { x: 500, y: 206 });
+        page.drawText(caltiempo1, { x: 500, y: 229 });
     } else if (caltiempo === '3') {
-        page.drawText(caltiempo1, { x: 529, y: 206 });
+        page.drawText(caltiempo1, { x: 529, y: 229 });
     } else if (caltiempo === '4') {
-        page.drawText(caltiempo1, { x: 555, y: 206 });
+        page.drawText(caltiempo1, { x: 555, y: 229 });
     } else if (caltiempo === '5') {
-        page.drawText(caltiempo1, { x: 577, y: 206 });
+        page.drawText(caltiempo1, { x: 580, y: 229 });
     }
     // Conocimiento
     calinformacion1 = 'X'
 
     if (calinformacion === '1') {
-        page.drawText(calinformacion1, { x: 475, y: 196 });
+        page.drawText(calinformacion1, { x: 475, y: 219 });
     } else if (calinformacion === '2') {
-        page.drawText(calinformacion1, { x: 500, y: 196 });
+        page.drawText(calinformacion1, { x: 500, y: 219 });
     } else if (calinformacion === '3') {
-        page.drawText(calinformacion1, { x: 529, y: 196 });
+        page.drawText(calinformacion1, { x: 529, y: 219 });
     } else if (calinformacion === '4') {
-        page.drawText(calinformacion1, { x: 555, y: 196 });
+        page.drawText(calinformacion1, { x: 555, y: 219 });
     } else if (calinformacion === '5') {
-        page.drawText(calinformacion1, { x: 577, y: 196 });
+        page.drawText(calinformacion1, { x: 580, y: 219 });
     }
 
 
