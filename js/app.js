@@ -335,16 +335,16 @@ async function llenarPDF() {
     // }
 
     page.drawText(ncaso, { x: 110, y: 805 });
-    page.drawText(fechaaperturadecaso, { x: 102, y: 794 });
+    page.drawText(fechaaperturadecaso, { x: 102, y: 793 });
     page.drawText(horaaperturadecaso, { x: 287, y: 794 });
-    page.drawText(seccional, { x: 92, y: 767 });
+    page.drawText(seccional, { x: 100, y: 767 });
     page.drawText(ccsolicitante, { x: 100, y: 754 });
     page.drawText(solicitante, { x: 355, y: 767 });
     page.drawText(ciudad, { x: 355, y: 754 });
     page.drawText(direccion, { x: 100, y: 743 });
     page.drawText(telefono, { x: 355, y: 743 });
     page.drawText(email, { x: 100, y: 732 });
-    page.drawText(despacho, { x: 347, y: 732 });
+    page.drawText(despacho, { x: 355, y: 732 });
     page.drawText(falla, { x: 22, y: 708 });
     page.drawText(fechaatenciondecaso, { x: 110, y: 647 });
     page.drawText(horaatenciondecaso, { x: 345, y: 647 });
@@ -355,13 +355,13 @@ async function llenarPDF() {
     page.drawText(marcaequipo, { x: 100, y: 596 });
     page.drawText(modeloequipo, { x: 341, y: 596 });
     page.drawText(sistemaoperativo, { x: 100, y: 585 });
-    page.drawText(antivirus, { x: 340, y: 585 });
+    page.drawText(antivirus, { x: 341, y: 585 });
     page.drawText(versionantivirus, { x: 526, y: 585 });
     page.drawText(diagnostico, { x: 149, y: 486 });
     page.drawText(solucion, { x: 117, y: 426 });
-    page.drawText(observacioncliente, { x: 145, y: 352 });
+    page.drawText(observacioncliente, { x: 145, y: 354 });
     page.drawText(recomendacionesing, { x: 24, y: 282 });
-    page.drawText(solicitante, { x: 390, y: 182 });
+    page.drawText(solicitante, { x: 393, y: 182 });
     page.drawText(ingenieroasignado, { x: 115, y: 182 });
     page.drawText(ccsolicitante, { x: 365, y: 101 });
     page.drawText(cedulaingenieroasignado, { x: 60, y: 101 });
