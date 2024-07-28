@@ -318,134 +318,247 @@ label {
 
 }
 
-@media (min-width: 960px) {
-    .firmasdiv {
-        display: flex;
-        flex-direction: row;
-    }
 
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ para mirma 
+ ===============================================================================*/
+ .fimas__container1{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    /* border :2px solid blue; */
+    /* background-color: #97740b; */
+    
+}
+
+
+.div__btn__firma{
+    /* border :2px solid rgb(106, 255, 0); */
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   text-align: center;
+    }
+.signature-pad {
+    border: 1px solid #000;
+    width: 100%;
+    height: 330px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: crosshair;
+}
+
+#signature-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(154, 155, 153, 0.5);
+    overflow: auto;
+}
+
+#signature-modal-content {
+/*     
+    background-color: #fefefe; */
+    /* border: 3px solid yellow; */
+    background-color: rgb(252, 252, 252);
+    margin: 15% auto;
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 90%;
+    max-width: 600px;
+    height: 77%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+.modal-footer {
+    border-top: 1px solid #888;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+#signature-preview-1,#signature-preview-2{
+    display: block;
+}
+.signature-preview {
+    /* border: 4px solid violet; */
+    /* max-width: 700px; */
+    /* border: 1px solid #e9ecef; */
+    width: 100%;
+    min-width: 290px;
+    height: 330px;
+    /* background: #fff; */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* display:flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; */
+    background-color: #e9ecef;
+    
+}
+.imagen1, .imagen2{
+    width: 250px;
+    height: 120px;
+}
+.img__firma{
+    width: 40px;
+    height: 38px; 
+   
+}
+.img__firma:hover{
+    cursor: pointer;
+}
+
+.modal-footer{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+#clear{
+    border: none;
+    background-color: white;
+}
+#save-signature{
+    border: none;
+    background-color: white; 
+}
+
+.open-modal{
+    
+    background-color: #0b9795;
+    border: none;
+    padding: 5px 18px;
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 5px;
+    
 
 }
 
-/* @media (max-width: 760px) {
+.clearfirmas{
+    /* background-color: #0b9795; */
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    font-weight: 800;
+    font-size: 18px; 
+    border-radius: 5px;
+}
 
-    .btn_verde {
-        width: 100px;
-        margin-left: 0px;
+
+
+@media(min-width :480px){
+    .signature-preview {
+        /* border: 4px solid rgb(212, 209, 15); */
+        /* max-width: 700px; */
+        /* border: 1px solid #e9ecef; */
+        width: 100%;
+        min-width: 490px;
+        height: 330px;
+        /* background: #fff; */
+        box-sizing: border-box;
+        overflow: hidden;
+        /* display:flex ;
+        justify-content: center;
+        align-items: center;
+        gap: 5px; */
+        background-color: #e9ecef;
+        
     }
 
-    .btn_azul {
-        width: 100px;
+    #signature-modal-content {
+        /*     
+            background-color: #fefefe; */
+            /* border: 3px solid yellow;
+            background-color: rgb(252, 252, 252); */
+            margin: 1% auto;
+            padding: 5px;
+            /* border: 1px solid #888; */
+            width: 90%;
+            max-width: 600px;
+            height: 500px;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+}
+
+
+@media(min-width :720px){
+    .signature-preview {
+        /* border: 4px solid rgb(255, 1, 18); */
+        /* max-width: 700px; */
+        /* border: 1px solid #e9ecef; */
+        width: 100%;
+        min-width: 550px;
+        height: 330px;
+        /* background: #fff; */
+        box-sizing: border-box;
+        overflow: hidden;
+        /* display:flex ;
+        justify-content: center;
+        align-items: center;
+        gap: 5px; */
+        background-color: #e9ecef;
+        
     }
-
-    .cerrar_barra {
-        margin-right: 0px;
-        margin-left: 10px;
-    }
-
-    .cerrarul {
-        margin-top: 10px;
-        right: 0;
-        margin-left: 0px;
-    }
-
-    .acerrar {
-        text-align: center;
-
-    }
-
-
-    .firmasdiv {
-
-        flex-direction: column;
-  
-    }
-
-    .firmas {
-        background-color: #0b9795;
-        width: 40px;
-    }
-
-    .canvas {
-        border: 1px solid rgb(3, 13, 61);
-        width: 40px;
+    .signature-preview img{
+        width: 450px;
         height: 270px;
-
-
     }
-} */
-
-
-/* @media (max-width: 330px) {
-
-    .firmas {
-        border: 1px solid rgb(0, 34, 128);
-        width: 300px;
-
-    }
-
-    .firmasdiv {
-
-        flex-direction: column;
-
-    }
-
-
-
-    .canvas {
-        border: 1px solid rgb(3, 13, 61);
-        width: 300px;
+    .imagen1, .imagen2{
+        width: 450px;
         height: 270px;
-        background-color: red;
-
     }
-
-    .btn_verde {
-        width: 270px;
-
-    }
-
-    .btn_azul {
-
-        width: 270px;
-    }
-} */
-
-/* @media (max-width: 510px) {
-
-    .firmas {
-        border: 1px solid rgb(0, 34, 128);
-        width: 410px;
-
-    }
-
-    .firmasdiv {
-
-        flex-direction: column;
-
-    }
-
-
-
-    .canvas {
-        border: 1px solid rgb(3, 13, 61);
-        width: 410px;
-        height: 270px;
-
-    }
-
-    .btn_verde {
-        width: 270px;
-
-    }
-
-    .btn_azul {
-
-        width: 270px;
-    }
-} */
-
-/* 
+}
 @media (max-width: 960px) {
 
     .btn_verde {
@@ -492,4 +605,4 @@ label {
 
 
     }
-} */
+} 
