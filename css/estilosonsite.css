@@ -59,7 +59,9 @@ body {
     color: white;
     width: 120px;
 }
-
+.btn_verde:hover{
+ background-color: #0b9795;
+}
 caption {
     color: var(--colorletratitulo);
     font-size: 22px;

@@ -139,7 +139,7 @@ function cambiarEstilo(el) {
   //Estilos input
   if (el.value.trim() !== "") {
     el.classList.add("colorborde");
-    console.log("esta lleno el input");
+    // console.log("esta lleno el input");
   } else {
     el.classList.remove("colorborde");
   }
