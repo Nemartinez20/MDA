@@ -59,9 +59,7 @@ body {
     color: white;
     width: 120px;
 }
-.btn_verde:hover{
- background-color: #0b9795;
-}
+
 caption {
     color: var(--colorletratitulo);
     font-size: 22px;
@@ -116,7 +114,7 @@ h5 {
 
 .color {
     border-color: #da1103e5;
-    box-shadow: 0 0 0 0.2rem rgba(245, 39, 3, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(245, 39, 3, 0.068);
 }
 
 .colorborde {
@@ -144,7 +142,7 @@ h5 {
 }
 
 .error {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.244);
 }
 
 .exito {

@@ -97,9 +97,9 @@ function eventos() {
   cedulaingenieroasignado.addEventListener("input", () => {
     cambiarEstilo(cedulaingenieroasignado);
   });
-  // tiposervicio.addEventListener("input", () => {
-  //   cambiarEstilo(tiposervicio);
-  // });
+  tiposervicio.addEventListener("input", () => {
+    cambiarEstilo(tiposervicio);
+  });
   placaequipo.addEventListener("input", () => {
     cambiarEstilo(placaequipo);
   });
@@ -127,9 +127,9 @@ function eventos() {
   solucion.addEventListener("input", () => {
     cambiarEstilo(solucion);
   });
-  // observacioncliente.addEventListener("input", () => {
-  //   cambiarEstilo(observacioncliente);
-  // });
+  observacioncliente.addEventListener("input", () => {
+    cambiarEstilo(observacioncliente);
+  });
   recomendacionesing.addEventListener("input", () => {
     cambiarEstilo(recomendacionesing);
   });
@@ -361,9 +361,7 @@ async function llenarPDF() {
   let cedulaingenieroasignado = document.getElementById(
     "cedulaingenieroasignado"
   ).value;
-  // let tiposervicio = document.getElementById("tiposervicio").value;
-  let requiereEquipoSi = document.getElementById("requiereEquipoSi").value;
-  let requiereEquipoNo = document.getElementById("requiereEquipoNo").value;
+  let tiposervicio = document.getElementById("tiposervicio").value;
   let placaequipo = document.getElementById("placaequipo").value;
   let serialequipo = document.getElementById("serialequipo").value;
   let marcaequipo = document.getElementById("marcaequipo").value;
@@ -373,7 +371,7 @@ async function llenarPDF() {
   let versionantivirus = document.getElementById("versionantivirus").value;
   let diagnostico = document.getElementById("diagnostico").value;
   let solucion = document.getElementById("solucion").value;
-  // let observacioncliente = document.getElementById("observacioncliente").value;
+  let observacioncliente = document.getElementById("observacioncliente").value;
   let recomendacionesing = document.getElementById("recomendacionesing").value;
 
   //Calificacion
@@ -407,14 +405,14 @@ async function llenarPDF() {
   if (fecha_creacion) {
     // Separar la fecha y la hora utilizando el método split
     const [fechacreacion, horacreacion] = fecha_creacion.split("T");
-    convertirFecha(fechacreacion);
-    console.log("Fecha:", fechacreacion);
+
+    // console.log("Fecha:", fechacreacion);
     // console.log("Hora:", horacreacion);
 
     // Convertir la hora al formato de 12 horas
     const horaaperturadecaso12 = convertirHora12(horacreacion);
 
-    fechaaperturadecaso = convertirFecha(fechacreacion);
+    fechaaperturadecaso = fechacreacion;
     horaaperturadecaso = horaaperturadecaso12;
   } else if (fecha_creacion === "") {
     fechaaperturadecaso = "";
@@ -432,7 +430,7 @@ async function llenarPDF() {
     // Convertir la hora al formato de 12 horas
     const horaatenciondecaso12 = convertirHora12(hora_atencion);
 
-    fechaatenciondecaso = convertirFecha(fecha_atencion);
+    fechaatenciondecaso = fecha_atencion;
     horaatenciondecaso = horaatenciondecaso12;
   } else if (fechaatencion === "") {
     fechaatenciondecaso = "";
@@ -448,7 +446,7 @@ async function llenarPDF() {
       ==========================================================================*/
 
   // Ruta del PDF existente
-  const pdfUrl = "FORMATO L.pdf";
+  const pdfUrl = "FORMATO.pdf";
   // Cargar el PDF existente
   const existingPdfBytes = await fetch(pdfUrl).then((res) => res.arrayBuffer()); //para obtenerlo
   const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes); //para cargar el pdf
@@ -458,7 +456,7 @@ async function llenarPDF() {
   // Establecer el tamaño de la página a "legal"
 
   const page = pdfDoc.getPages()[0]; // Obtener la primera página del PDF
-  const legalPageSize = [612, 999]; // [ancho, alto] para tamaño legal
+  const legalPageSize = [612, 940]; // [ancho, alto] para tamaño legal
   page.setSize(...legalPageSize);
   page.setFontSize(9);
 
@@ -467,8 +465,8 @@ async function llenarPDF() {
       ==========================================================================*/
 
   // Ajustar el ancho y alto de la imagen según sea necesario
-  const imageWidth = 189; // Ajusta el ancho de la imagen FIRMA Cliente
-  const imageHeight = 58; // Ajusta el alto de la imagen FIRMA Cliente
+  const imageWidth = 185; // Ajusta el ancho de la imagen FIRMA Cliente
+  const imageHeight = 54; // Ajusta el alto de la imagen FIRMA Cliente
 
   if (FirmaIngeniero === "") {
     FirmaIngeniero = "";
@@ -483,7 +481,7 @@ async function llenarPDF() {
     //Imprimir en el pdf
     page.drawImage(image1, {
       x: 50, // Posición X de la imagen
-      y: 210, // Posición Y de la imagen
+      y: 122, // Posición Y de la imagen
       width: imageWidth,
       height: imageHeight,
       color: rgb(1, 0, 0), // Rojo
@@ -505,8 +503,8 @@ async function llenarPDF() {
 
     //Imprimir en el pdf
     page.drawImage(image2, {
-      x: 359, // Posición X de la imagen
-      y: 210, // Posición Y de la imagen
+      x: 350, // Posición X de la imagen
+      y: 122, // Posición Y de la imagen
       width: imageWidth,
       height: imageHeight,
       color: rgb(1, 0, 0), // Rojo
@@ -559,19 +557,19 @@ async function llenarPDF() {
                             IMPRIMIR VARIABLES AL PDF
       ==========================================================================*/
   const lineHeight = 12; // Ajusta este valor para aumentar/disminuir el espacio entre líneas
-  drawTextWithLines(falla, 23, 762, 9, lineHeight);
+  drawTextWithLines(falla, 22, 707, 9, lineHeight);
 
   diagnosticofinal = `Información de Diagnóstico:   ${diagnostico}`;
   //   getFillColor(diagnosticofinal, 10, 20, "rgb(255, 0, 0)");
-  drawTextWithLines(diagnosticofinal, 22, 565, 9, lineHeight);
+  drawTextWithLines(diagnosticofinal, 22, 486, 9, lineHeight);
 
-  const palabra = "Solución entregada y/o Observaciones:  ";
+  const palabra = "Solución Entregada:  ";
 
   solucionfinal = `${palabra} ${solucion}`;
-  drawTextWithLines(solucionfinal, 22, 496, 9, lineHeight);
+  drawTextWithLines(solucionfinal, 22, 426, 9, lineHeight);
 
-  //observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
-  //drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
+  observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
+  drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
 
   // Añadir texto al PDF con interlineado
   const drawTextWithLines2 = (text, x, y, fontSize, lineHeight) => {
@@ -583,97 +581,95 @@ async function llenarPDF() {
   };
 
   //   observacionclientefinal = `OSbservación por el Cliente: ${solucion}`;
-  drawTextWithLines2(recomendacionesing, 22, 384, 9, lineHeight);
+  drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
 
-  page.drawText(ncaso, { x: 130, y: 861 });
-  page.drawText(fechaaperturadecaso, { x: 132, y: 849 });
-  page.drawText(horaaperturadecaso, { x: 182, y: 849 });
-  page.drawText(seccional, { x: 103, y: 823 });
-  page.drawText(ccsolicitante, { x: 103, y: 811 });
-  page.drawText(solicitante, { x: 371, y: 823 });
-  page.drawText(ciudad, { x: 371, y: 811 });
-  page.drawText(direccion, { x: 103, y: 799 });
-  page.drawText(telefono, { x: 371, y: 799 });
-  page.drawText(email, { x: 103, y: 787 });
-  page.drawText(despacho, { x: 371, y: 787 });
+  page.drawText(ncaso, { x: 110, y: 805 });
+  page.drawText(fechaaperturadecaso, { x: 102, y: 793 });
+  page.drawText(horaaperturadecaso, { x: 287, y: 794 });
+  page.drawText(seccional, { x: 100, y: 767 });
+  page.drawText(ccsolicitante, { x: 100, y: 754 });
+  page.drawText(solicitante, { x: 355, y: 767 });
+  page.drawText(ciudad, { x: 355, y: 754 });
+  page.drawText(direccion, { x: 100, y: 743 });
+  page.drawText(telefono, { x: 355, y: 743 });
+  page.drawText(email, { x: 100, y: 732 });
+  page.drawText(despacho, { x: 355, y: 732 });
   //   page.drawText(falla, { x: 22, y: 708 });
-  page.drawText(fechaatenciondecaso, { x: 151, y: 689 });
-  page.drawText(horaatenciondecaso, { x: 205, y: 689 });
-  page.drawText(ingenieroasignado, { x: 152, y: 677 });
-  //page.drawText(tiposervicio, { x: 345, y: 634 });
-  page.drawText(requiereEquipoSi, { x: 136, y: 602 });
-  page.drawText(requiereEquipoNo, { x: 136, y: 590 });
-  page.drawText(placaequipo, { x: 114, y: 652 });
-  page.drawText(serialequipo, { x: 339, y: 652 });
-  page.drawText(marcaequipo, { x: 114, y: 640 });
-  page.drawText(modeloequipo, { x: 339, y: 640 });
-  page.drawText(sistemaoperativo, { x: 114, y: 629 });
-  page.drawText(antivirus, { x: 339, y: 629 });
-  page.drawText(versionantivirus, { x: 540, y: 629 });
+  page.drawText(fechaatenciondecaso, { x: 110, y: 647 });
+  page.drawText(horaatenciondecaso, { x: 345, y: 647 });
+  page.drawText(ingenieroasignado, { x: 100, y: 634 });
+  page.drawText(tiposervicio, { x: 345, y: 634 });
+  page.drawText(placaequipo, { x: 100, y: 608 });
+  page.drawText(serialequipo, { x: 341, y: 608 });
+  page.drawText(marcaequipo, { x: 100, y: 596 });
+  page.drawText(modeloequipo, { x: 341, y: 596 });
+  page.drawText(sistemaoperativo, { x: 100, y: 585 });
+  page.drawText(antivirus, { x: 341, y: 585 });
+  page.drawText(versionantivirus, { x: 526, y: 585 });
   //   page.drawText(diagnostico, { x: 149, y: 486 });
   //   page.drawText(solucion, { x: 117, y: 426 });
   //   page.drawText(observacioncliente, { x: 145, y: 354 });
   //   page.drawText(recomendacionesing, { x: 24, y: 282 });
-  page.drawText(solicitante, { x: 393, y: 272 });
-  page.drawText(ingenieroasignado, { x: 115, y: 272 });
-  page.drawText(ccsolicitante, { x: 385, y: 180 });
-  page.drawText(cedulaingenieroasignado, { x: 60, y: 180 });
+  page.drawText(solicitante, { x: 393, y: 182 });
+  page.drawText(ingenieroasignado, { x: 115, y: 182 });
+  page.drawText(ccsolicitante, { x: 365, y: 101 });
+  page.drawText(cedulaingenieroasignado, { x: 60, y: 101 });
 
   // Calificacion
   calidisposicion1 = "X";
 
   if (calidisposicion === "1") {
-    page.drawText(calidisposicion1, { x: 477, y: 337 });
+    page.drawText(calidisposicion1, { x: 475, y: 230 });
   } else if (calidisposicion === "2") {
-    page.drawText(calidisposicion1, { x: 503, y: 337 });
+    page.drawText(calidisposicion1, { x: 500, y: 230 });
   } else if (calidisposicion === "3") {
-    page.drawText(calidisposicion1, { x: 529, y: 337 });
+    page.drawText(calidisposicion1, { x: 529, y: 230 });
   } else if (calidisposicion === "4") {
-    page.drawText(calidisposicion1, { x: 555, y: 337 });
+    page.drawText(calidisposicion1, { x: 555, y: 230 });
   } else if (calidisposicion === "5") {
-    page.drawText(calidisposicion1, { x: 577, y: 337 });
+    page.drawText(calidisposicion1, { x: 577, y: 230 });
   }
   // Conocimiento
   calconocimiento1 = "X";
 
   if (calconocimiento === "1") {
-    page.drawText(calconocimiento1, { x: 477, y: 325 });
+    page.drawText(calconocimiento1, { x: 475, y: 218 });
   } else if (calconocimiento === "2") {
-    page.drawText(calconocimiento1, { x: 503, y: 325 });
+    page.drawText(calconocimiento1, { x: 500, y: 218 });
   } else if (calconocimiento === "3") {
-    page.drawText(calconocimiento1, { x: 529, y: 325 });
+    page.drawText(calconocimiento1, { x: 529, y: 218 });
   } else if (calconocimiento === "4") {
-    page.drawText(calconocimiento1, { x: 555, y: 325 });
+    page.drawText(calconocimiento1, { x: 555, y: 218 });
   } else if (calconocimiento === "5") {
-    page.drawText(calconocimiento1, { x: 577, y: 325 });
+    page.drawText(calconocimiento1, { x: 577, y: 218 });
   }
   // Conocimiento
   caltiempo1 = "X";
 
   if (caltiempo === "1") {
-    page.drawText(caltiempo1, { x: 477, y: 313 });
+    page.drawText(caltiempo1, { x: 475, y: 206 });
   } else if (caltiempo === "2") {
-    page.drawText(caltiempo1, { x: 503, y: 313 });
+    page.drawText(caltiempo1, { x: 500, y: 206 });
   } else if (caltiempo === "3") {
-    page.drawText(caltiempo1, { x: 529, y: 313 });
+    page.drawText(caltiempo1, { x: 529, y: 206 });
   } else if (caltiempo === "4") {
-    page.drawText(caltiempo1, { x: 555, y: 313 });
+    page.drawText(caltiempo1, { x: 555, y: 206 });
   } else if (caltiempo === "5") {
-    page.drawText(caltiempo1, { x: 577, y: 313 });
+    page.drawText(caltiempo1, { x: 577, y: 206 });
   }
   // Conocimiento
   calinformacion1 = "X";
 
   if (calinformacion === "1") {
-    page.drawText(calinformacion1, { x: 477, y: 302 });
+    page.drawText(calinformacion1, { x: 475, y: 196 });
   } else if (calinformacion === "2") {
-    page.drawText(calinformacion1, { x: 503, y: 302 });
+    page.drawText(calinformacion1, { x: 500, y: 196 });
   } else if (calinformacion === "3") {
-    page.drawText(calinformacion1, { x: 529, y: 302 });
+    page.drawText(calinformacion1, { x: 529, y: 196 });
   } else if (calinformacion === "4") {
-    page.drawText(calinformacion1, { x: 555, y: 302 });
+    page.drawText(calinformacion1, { x: 555, y: 196 });
   } else if (calinformacion === "5") {
-    page.drawText(calinformacion1, { x: 577, y: 302 });
+    page.drawText(calinformacion1, { x: 577, y: 196 });
   }
   // Serializar el documento PDF a bytes
   const modifiedPdfBytes = await pdfDoc.save();
@@ -693,26 +689,4 @@ function convertirHora12(hora24) {
   const hora12 = hora % 12 || 12;
 
   return `${hora12}:${minutos} ${ampm}`;
-}
-
-function convertirFecha(fecha) {
-  // Convertir `fecha` a un objeto Date si es una cadena
-  const fechaObj =
-    typeof fecha === "string"
-      ? new Date(fecha + "T00:00:00Z") // Añadir tiempo en UTC
-      : fecha;
-
-  // Verificar si la fecha es válida
-  if (isNaN(fechaObj)) {
-    console.error("Formato de fecha inválido");
-    return;
-  }
-
-  // Extraer día, mes y año de la fecha original
-  const dia = String(fechaObj.getUTCDate()).padStart(2, "0"); // Obtener el día en UTC
-  const mes = String(fechaObj.getUTCMonth() + 1).padStart(2, "0"); // Obtener el mes en UTC
-  const año = fechaObj.getUTCFullYear(); // Obtener el año en UTC
-  console.log(`${dia}-${mes}-${año}`);
-  // Devolver la fecha en el formato "DD-MM-YYYY"
-  return `${dia}-${mes}-${año}`;
 }
