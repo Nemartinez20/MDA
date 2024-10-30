@@ -568,14 +568,14 @@ async function llenarPDF() {
   const palabra = "Solución entregada y/o Observaciones:  ";
 
   solucionfinal = `${palabra} ${solucion}`;
-  drawTextWithLines(solucionfinal, 22, 496, 9, lineHeight);
+  drawTextWithLines(solucionfinal, 22, 493, 9, lineHeight);
 
   //observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
   //drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
 
   // Añadir texto al PDF con interlineado
   const drawTextWithLines2 = (text, x, y, fontSize, lineHeight) => {
-    const maxWidth = 330;
+    const maxWidth = 326;
     const lines = splitTextIntoLines(text, fontSize, maxWidth);
     lines.forEach((line, index) => {
       page.drawText(line, { x, y: y - lineHeight * index, size: fontSize });
@@ -590,12 +590,12 @@ async function llenarPDF() {
   page.drawText(horaaperturadecaso, { x: 182, y: 849 });
   page.drawText(seccional, { x: 103, y: 823 });
   page.drawText(ccsolicitante, { x: 103, y: 811 });
-  page.drawText(solicitante, { x: 371, y: 823 });
-  page.drawText(ciudad, { x: 371, y: 811 });
+  page.drawText(solicitante, { x: 356, y: 823 });
+  page.drawText(ciudad, { x: 356, y: 811 });
   page.drawText(direccion, { x: 103, y: 799 });
-  page.drawText(telefono, { x: 371, y: 799 });
+  page.drawText(telefono, { x: 356, y: 799 });
   page.drawText(email, { x: 103, y: 787 });
-  page.drawText(despacho, { x: 371, y: 787 });
+  page.drawText(despacho, { x: 356, y: 787 });
   //   page.drawText(falla, { x: 22, y: 708 });
   page.drawText(fechaatenciondecaso, { x: 151, y: 689 });
   page.drawText(horaatenciondecaso, { x: 205, y: 689 });
@@ -683,7 +683,7 @@ async function llenarPDF() {
   downloadLink.href = URL.createObjectURL(
     new Blob([modifiedPdfBytes], { type: "application/pdf" })
   );
-  downloadLink.download = `Onsite_${ncaso}.pdf`;
+  downloadLink.download = `ON-${ncaso}.pdf`;
   downloadLink.click();
 }
 
