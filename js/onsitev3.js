@@ -28,7 +28,7 @@ let versionantivirus = document.getElementById("versionantivirus");
 let diagnostico = document.getElementById("diagnostico");
 let solucion = document.getElementById("solucion");
 let observacioncliente = document.getElementById("observacioncliente");
-let recomendacionesing = document.getElementById("recomendacionesing");
+// let recomendacionesing = document.getElementById("recomendacionesing");
 
 document.addEventListener("DOMContentLoaded", function () {
   generarFirmas();
@@ -130,9 +130,9 @@ function eventos() {
   observacioncliente.addEventListener("input", () => {
     cambiarEstilo(observacioncliente);
   });
-  recomendacionesing.addEventListener("input", () => {
-    cambiarEstilo(recomendacionesing);
-  });
+  // recomendacionesing.addEventListener("input", () => {
+  //   cambiarEstilo(recomendacionesing);
+  // });
 }
 
 function cambiarEstilo(el) {
@@ -372,7 +372,7 @@ async function llenarPDF() {
   let diagnostico = document.getElementById("diagnostico").value;
   let solucion = document.getElementById("solucion").value;
   let observacioncliente = document.getElementById("observacioncliente").value;
-  let recomendacionesing = document.getElementById("recomendacionesing").value;
+  // let recomendacionesing = document.getElementById("recomendacionesing").value;
 
   //Calificacion
   let calidisposicion = document.getElementById("calidisposicion").value;
@@ -446,7 +446,7 @@ async function llenarPDF() {
       ==========================================================================*/
 
   // Ruta del PDF existente
-  const pdfUrl = "FORMATOODV3 L.pdf";
+  const pdfUrl = "FORMATO.pdf";
   // Cargar el PDF existente
   const existingPdfBytes = await fetch(pdfUrl).then((res) => res.arrayBuffer()); //para obtenerlo
   const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes); //para cargar el pdf
@@ -581,7 +581,7 @@ async function llenarPDF() {
   };
 
   //   observacionclientefinal = `OSbservación por el Cliente: ${solucion}`;
-  drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
+  // drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
 
   page.drawText(ncaso, { x: 110, y: 805 });
   page.drawText(fechaaperturadecaso, { x: 102, y: 793 });
