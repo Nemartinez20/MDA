@@ -593,6 +593,22 @@ async function llenarPDF() {
   //   observacionclientefinal = `OSbservación por el Cliente: ${solucion}`;
   // drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
 
+  function imprimirvariablesenPdf(variableInput, SX, SY, NX, NY) {
+    if (variableInput === "SI") {
+      variableInput = "X";
+      console.log(variableInput);
+      page.drawText(variableInput, { x: SX, y: SY });
+    } else if (variableInput === "NO") {
+      variableInput = "____";
+      console.log(variableInput);
+
+      page.drawText(variableInput, { x: NX, y: NY });
+    } else {
+      variableInput = "NADA";
+      console.log(variableInput);
+    }
+  }
+
   page.drawText(ncaso, { x: 130, y: 833 });
   page.drawText(fechaaperturadecaso, { x: 132, y: 821 });
   page.drawText(horaaperturadecaso, { x: 182, y: 821 });
@@ -644,17 +660,71 @@ async function llenarPDF() {
 
       page.drawText(variableInput, { x: NX, y: NY });
     } else {
-      variableInput = "NADA";
+      variableInput = "____";
       console.log(variableInput);
+      page.drawText(variableInput, { x: NX, y: NY });
+      page.drawText(variableInput, { x: NX, y: NY });
     }
   }
 
   imprimirListaVerificacion(AntivirusActualizado, 369, 580, 362, 585);
   imprimirListaVerificacion(AgenteIvanti, 167, 558, 162, 562);
   imprimirListaVerificacion(Office365, 369, 559, 361, 564);
-  imprimirListaVerificacion(EquipoenDominio, 530, 557, 525, 564);
-  imprimirListaVerificacion(requiereRepuesto, 169, 528, 169, 532);
-  imprimirListaVerificacion(requiereEquipo, 452, 528, 452, 532);
+  imprimirListaVerificacion(EquipoenDominio, 530, 559, 525, 564);
+
+  function imprimirListaRequerimiento(
+    variableInput,
+    SX,
+    SY,
+    NX,
+    NY,
+    BSX,
+    BSY,
+    BNX,
+    BNY
+  ) {
+    if (variableInput === "SI") {
+      variableInput = "X";
+      console.log(variableInput);
+      page.drawText(variableInput, { x: SX, y: SY });
+    } else if (variableInput === "NO") {
+      variableInput = "X";
+      console.log(variableInput);
+
+      page.drawText(variableInput, { x: NX, y: NY });
+    } else {
+      variableInput = "_______________________";
+      page.drawText(variableInput, { x: BSX, y: BSY });
+      page.drawText(variableInput, { x: BNX, y: BNY });
+      page.drawText(variableInput, { x: BSX, y: BSY });
+      page.drawText(variableInput, { x: BNX, y: BNY });
+
+      console.log(variableInput);
+    }
+  }
+
+  imprimirListaRequerimiento(
+    requiereRepuesto,
+    169,
+    528,
+    169,
+    515,
+    169,
+    531,
+    169,
+    519
+  );
+  imprimirListaRequerimiento(
+    requiereEquipo,
+    452,
+    528,
+    452,
+    515,
+    452,
+    531,
+    452,
+    519
+  );
   // page.drawText(AgenteIvanti, { x: 167, y: 558 });
   // page.drawText(Office365, { x: 369, y: 559 });
   // page.drawText(EquipoenDominio, { x: 530, y: 559 });
