@@ -60,7 +60,8 @@
                     <li class="nav-item"><a href="index.html" class="nav-link barracolor">Inicio</a></li>
                     <li class="nav-item"><a href="registrar.html" class="nav-link barracolor">Registrar Caso</a></li>
                     <li class="nav-item"><a href="consulta.html" class="nav-link barracolor">Consultar caso</a></li>
-                    <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite V2</a></li>
+                    <li class="nav-item"><a href="onsitev2.html" class="nav-link barracolor">Onsite V2</a></li>
+                    <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite V3</a></li>
                     <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a>
                     </li> -->
 
@@ -78,56 +79,524 @@
             <p class=" ">NOTA: Para generar el Onsite debes limpiar la cache del navegador una unica vez</p>
 
         </div>
-        <h3 class="my-4 text-center">Onsite de Diagnostico V3</h3>
 
-        <div class="container text-center">
-            <p class=" ">Formato de Diagnostico Fecha Versión: en Actualizacion</p>
+
+        <!-----------------------------------------------------------------------------------------
+                                              final heaader
+        --------------------------------------------------------------------------------------------- -->
+
+        <main class="d-flex justify-content-center flex-column  m-auto">
+            <h3 class="my-4 text-center">Onsite de Diagnostico V3</h3>
+
+            <div class="container text-center">
+                <p class=" ">Formato de Diagnostico Fecha Versión: 15/12/2025</p>
+            </div>
+            <div class="container">
+                <form id="form" class="formulario  row  p-3 mb-5 " method="POST">
+
+                    <!-- -------------------------------------------------------------------
+                                       Datos del caso
+        ------------------------------------------------------------------------------->
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel"> Datos del caso </legend>
+
+                        <div class=" col-12 col-md-5">
+                            <label for="ncaso" class="form-label">Numero de caso</label>
+                            <input type="text" class="form-control color" name="ncaso" id="ncaso" />
+
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="fecha_creacion" class="form-label">Fecha creacion</label>
+                            <input type="datetime-local" class="form-control color" name="fecha_creacion"
+                                id="fecha_creacion" />
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- -------------------------------------------------------------------
+                                       Datos del usuario
+        ------------------------------------------------------------------------------->
+
+
+
+                    <fieldset class="reset mt-2  d-flex justify-content-evenly flex-wrap ">
+                        <legend class="reset fiel "> Datos del usuario </legend>
+                        <div class="col-12 col-md-5 ">
+                            <label for="seccional" class="form-label">Seccional</label>
+                            <input type="text" class="form-control color" name="seccional" id="seccional" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="ccsolicitante" class="form-label">Cedula Solicitante</label>
+                            <input type="number" class="form-control color" name="ccsolicitante" id="ccsolicitante" />
+                        </div>
+                        <!-- <div class="mt-2">
+                    <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
+                </div> -->
+
+                        <div class="col-12 col-md-5">
+                            <label for="Solicitante" class="form-label">Solicitante</label>
+                            <input type="text" class="form-control color" name="solicitante" id="solicitante" />
+                        </div>
+
+
+
+                        <div class="col-12 col-md-5">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control color" name="ciudad" id="ciudad" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="direccion" class="form-label">Direccion</label>
+                            <input type="text" class="form-control color" name="direccion" id="direccion" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input type="number" class="form-control color" name="telefono" id="telefono" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="email" class="form-label">Correo electronico</label>
+                            <input type="text" class="form-control color" name="email" id="email" />
+                        </div>
+
+
+                        <div class="col-12 col-md-5">
+                            <label for="despacho" class="form-label">Despacho</label>
+                            <input type="text" class="form-control color" name="despacho" id="despacho" />
+                        </div>
+
+
+                    </fieldset>
+
+                    <!-- -------------------------------------------------------------------
+                                       Datos del caso
+        ------------------------------------------------------------------------------->
+
+
+
+
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap ">
+                        <legend class="reset fiel"> Falla reportada </legend>
+
+                        <div class="col-11">
+                            <label for="falla" class="form-label">Descripcion falla</label>
+                            <textarea class="form-control color" aria-label="With textarea " name="falla"
+                                id="falla"></textarea>
+                        </div>
+                        <div class="col-12 col-md-5">
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- -------------------------------------------------------------------
+                                       Datos del ingeniero asignado
+        ------------------------------------------------------------------------------->
+
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel"> Ingeniero Asignado </legend>
+                        <div class="col-12 col-md-5">
+                            <label for="ingenieroasignado" class="form-label">Ingeniero asignado</label>
+                            <input type="text" class="form-control color" name="ingenieroasignado"
+                                id="ingenieroasignado" />
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <label for="cedulaingenieroasignado" class="form-label">Cedula Ingeniero asignado</label>
+                            <input type="number" class="form-control color" name="cedulaingenieroasignado"
+                                id="cedulaingenieroasignado" />
+                        </div>
+                        <!-- <div class="col-12 col-md-5">
+                        <label for="tiposervicio" class="form-label">Tipo de servicio</label>
+                        <input type="text" class="form-control color" name="tiposervicio" id="tiposervicio" />
+                    </div> -->
+
+                        <div class="col-12 col-md-5">
+                            <label for="fechaatencion" class="form-label">Fecha Atencion</label>
+                            <input type="datetime-local" class="form-control color" name="fechaatencion"
+                                id="fechaatencion" />
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <!-- <label for="tiposervicio" class="form-label">Tipo de servicio</label>
+                        <input type="text" class="form-control color" name="tiposervicio" id="tiposervicio" /> -->
+                        </div>
+
+
+                    </fieldset>
+
+
+
+
+                    <!-- -------------------------------------------------------------------
+                                       Datos del Equipo
+        ------------------------------------------------------------------------------->
+
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel"> Datos del Equipo </legend>
+
+
+                        <div class="col-12 col-md-5">
+                            <label for="serialequipo" class="form-label">Serial Equipo</label>
+                            <input type="text" class="form-control color" name="serialequipo" id="serialequipo" />
+                        </div>
+                        <!-- <div class="mt-2">
+                    <input type="submit" value="Consultar" class="btn btn_azul mt-4 col-2 " />
+                </div> -->
+
+                        <div class="col-12 col-md-5">
+                            <label for="placaequipo" class="form-label">Placa Equipo</label>
+                            <input type="text" class="form-control color" name="placaequipo" id="placaequipo" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="marcaequipo" class="form-label">Marca Equipo</label>
+                            <input type="text" class="form-control color" name="marcaequipo" id="marcaequipo" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="modeloequipo" class="form-label">Modelo Equipo</label>
+                            <input type="text" class="form-control color" name="motivo" id="modeloequipo" />
+                        </div>
+                        <div class="col-12 col-md-5">
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- -------------------------------------------------------------------
+                        Lista de Verificación (únicamente para equipos de cómputo)
+                     ------------------------------------------------------------------------------->
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap ">
+                        <legend class="reset fiel"> Lista de Verificación (únicamente para equipos de cómputo) </legend>
+
+                        <div class="col-12 col-md-5">
+                            <label for="sistemaoperativo" class="form-label">Sistema operativo</label>
+                            <input type="text" class="form-control color" name="sistemaoperativo"
+                                id="sistemaoperativo" />
+                        </div>
+                        <div class="col-12 col-md-5 d-none">
+                            <label for="antivirus" class="form-label">Antivirus</label>
+                            <input type="text" class="form-control color" name="antivirus" id="antivirus" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="versionantivirus" class="form-label">Version Antivirus</label>
+                            <input type="text" class="form-control color" name="versionantivirus"
+                                id="versionantivirus" />
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Antivirus Actualizado:</label>
+                            <select class="form-select color" name="AntivirusActualizado" id="AntivirusActualizado"
+                                required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+
+
+
+
+
+
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Agente Ivanti:</label>
+                            <select class="form-select color" name="AgenteIvanti" id="AgenteIvanti" required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Office 365:</label>
+                            <select class="form-select color" name="Office365" id="Office365" required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Equipo en Dominio:</label>
+                            <select class="form-select color" name="EquipoenDominio" id="EquipoenDominio" required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-5">
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- -------------------------------------------------------------------
+                                      Elementos de soporte
+        ------------------------------------------------------------------------------->
+
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel">Requiere Repuesto y Continuidad </legend>
+
+
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Requiere Repuesto (Marque X)</label>
+                            <select class="form-select color" name="requiereRepuesto" id="requiereRepuesto" required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Requiere Equipo de Continuidad (Marque X)</label>
+                            <select class="form-select color" name="requiereEquipo" id="requiereEquipo" required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- -------------------------------------------------------------------
+                                     Descripcion del servicio
+        ------------------------------------------------------------------------------->
+
+
+
+
+
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel"> Descripcion del servicio </legend>
+
+                        <div class="col-11  ">
+                            <label for="diagnostico" class="form-label">Informacion de Diagnostico</label>
+                            <textarea class="form-control color" aria-label="With textarea" name="diagnostico"
+                                id="diagnostico"></textarea>
+                        </div>
+                        <div class="col-11  ">
+                            <label for="solucion" class="form-label">Solución entregada y/o Observaciones</label>
+                            <textarea class="form-control color" aria-label="With textarea" name="solucion"
+                                id="solucion"></textarea>
+                        </div>
+
+
+
+
+
+
+
+
+                    </fieldset>
+
+                    <!-- -------------------------------------------------------------------
+                                   CALIFICACION
+        ------------------------------------------------------------------------------->
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel">Calificacion de servicio </legend>
+                        <div
+                            class="row d-flex justify-content-evenly flex-wrap col-sm-11 col-md-11 col-lg-11 containecalificacion">
+                            <p class="text-center titulos">Calificación del servicio</p>
+                            <span class="espacio">
+                                Por favor marque con una X las siguientes preguntas considerando 1 como la mínima
+                                calificación y 5 como la máxima calificación de acuerdo al grado de satisfacción que se
+                                encuentra con el servicio prestado</span>
+
+
+
+
+                            <div class="col-sm-10 col-md-4 col-lg-5 ">
+                                <label for="calidisposicion" class="form-label ">Disposición para atención de
+                                    servicio del
+                                    ingeniero:</label>
+                                <select class="form-control calidisposicion" id="calidisposicion"
+                                    name="calidisposicion">
+                                    <option value="">--Selecione--</option>
+
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-sm-10 col-md-4 col-lg-5 ">
+                                <label for="calconocimiento" class="form-label">Conocimiento técnico del
+                                    ingeniero:</label>
+                                <select class="form-control" id="calconocimiento" name="calconocimiento">
+                                    <option value="">--Selecione--</option>
+
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-sm-10 col-md-4 col-lg-5 ">
+                                <label for="caltiempo" class="form-label">Tiempo de atención y solución:</label>
+                                <select class="form-control" id="caltiempo" name="caltiempo">
+                                    <option value="">--Selecione--</option>
+
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-sm-10 col-md-4 col-lg-5 ">
+                                <label for="calinformacion" class="form-label">Información del avance del caso:</label>
+                                <select class="form-control" id="calinformacion" name="calinformacion">
+                                    <option value="">--Selecione--</option>
+
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+                    <!-- -------------------------------------------------------------------
+                                   FIRMAS
+        ------------------------------------------------------------------------------->
+
+                    <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap">
+                        <legend class="reset fiel">Firmas </legend>
+
+
+
+
+                        <div class="fimas__container1">
+                            <div class="div__btn__firma">
+
+                                <div class="container__firmas">
+                                    <label for="Descricion" class="form-label">Firma del Ingeniero</label>
+                                    <div id="signature-preview-1" class="signature-preview"></div>
+                                </div>
+                                <button type="button" data-signature-id="1" class="open-modal">Firma Ingeniero </button>
+
+                            </div>
+                            <div class="div__btn__firma">
+                                <div class="container__firmas">
+                                    <label for="Descricion" class="form-label">Firma del Cliente</label>
+                                    <div id="signature-preview-2" class="signature-preview"></div>
+                                </div>
+                                <button type="button" data-signature-id="2" class="open-modal">Firma Cliente </button>
+                            </div>
+
+
+                            <!-- Modal para captura de firma -->
+                            <div id="signature-modal">
+                                <div id="signature-modal-content">
+                                    <div class="modal-header">
+                                        <span class="close"><img class="img__firma" src="img/x-solid.svg"
+                                                alt=" imagen__cerrarmodal"></span>
+                                        <h2 id="modal-title">Captura tu Firma</h2>
+                                    </div>
+                                    <div id="signature-pad-container">
+                                        <div id="signature-pad" class="signature-pad">
+                                            <canvas id="signature-canvas"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="clear"><img class="img__firma" id="limpiar"
+                                                src="img/trash-solid.svg" alt=""></button>
+                                        <button type="button" id="save-signature"><img class="img__firma"
+                                                src="img/floppy-disk-regular.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+            </div>
+
+            </fieldset>
+
+
+
+            <div class="mb-4 container">
+
+                <button class="btn btn_verde mt-3 col-2" id="btngenerarpdf">Generar</button>
+
+            </div>
+
+
+
+
+            </form>
+            </div>
+        </main>
+
+
+        <!-----------------------------------------------------------------------------------------
+                                           footer
+    --------------------------------------------------------------------------------------------- -->
+        <div class="footer-propidades p-4 barracolor">
+            <footer>
+
+                <div class="containercentro">
+                    <div class="row text-center mb-2">
+                        <div class="c-redes d-flex justify-content-center gap-3">
+                            <p class="siguenos">Sígueme</p>
+                            <a href=""><img class="redes" src="img/facebook.svg" width="30" class="text-center"
+                                    alt="" /></a>
+                            <a href=""><img class="redes" src="img/twitter.svg" width="30" class="text-center"
+                                    alt="" /></a>
+                            <a href=""><img class="redes" src="img/youtube.svg" width="30" class="text-center"
+                                    alt="" /></a>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <p>Copyright © 2024 Néstor Martínez. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
         </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-    </main>
-
-
-    <!-----------------------------------------------------------------------------------------
-                                           footer
-    --------------------------------------------------------------------------------------------- -->
-    <div class="footer-propidades p-4 barracolor">
-        <footer>
-
-            <div class="containercentro">
-                <div class="row text-center mb-2">
-                    <div class="c-redes d-flex justify-content-center gap-3">
-                        <p class="siguenos">Sígueme</p>
-                        <a href=""><img class="redes" src="img/facebook.svg" width="30" class="text-center"
-                                alt="" /></a>
-                        <a href=""><img class="redes" src="img/twitter.svg" width="30" class="text-center" alt="" /></a>
-                        <a href=""><img class="redes" src="img/youtube.svg" width="30" class="text-center" alt="" /></a>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <p>Copyright © 2024 Néstor Martínez. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-
-
-
-    <script src="js/app.js"></script>
-    <script src="js/bundle.min.js"></script>
+        <script src="js/onsitev3.js"></script>
+        <script src="js/bundle.min.js"></script>
 
 </body>
 

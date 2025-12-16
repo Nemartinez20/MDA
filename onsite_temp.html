@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/estilosonsite.css">
+
+    <!-- Script para generar la firma con canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+
+    <!-- Script para generar el pdf libreria de pdf-lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+        integrity="sha512-z8IYLHO8bTgFqj+yrPyIJnzBDf7DDhWwiEsk4sY+Oe6J2M+WQequeGS7qioI5vT6rXgVRb4K1UVQC5ER7MKzKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -51,10 +60,9 @@
                     <li class="nav-item"><a href="index.html" class="nav-link barracolor">Inicio</a></li>
                     <li class="nav-item"><a href="registrar.html" class="nav-link barracolor">Registrar Caso</a></li>
                     <li class="nav-item"><a href="consulta.html" class="nav-link barracolor">Consultar caso</a></li>
-                    <li class="nav-item"><a href="onsiteoldv2.html" class="nav-link barracolor">Onsite V2</a></li>
-                    <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite V3</a></li>
-                    <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a> -->
-                    </li>
+                    <li class="nav-item"><a href="onsite.html" class="nav-link barracolor">Onsite V2</a></li>
+                    <!-- <li class="nav-item"><a href="iniciar_sesion.html" class="nav-link barracolor">Iniciar sesion</a>
+                    </li> -->
 
                 </ul>
             </div>
@@ -65,29 +73,31 @@
                                               final heaader
         --------------------------------------------------------------------------------------------- -->
 
-    <main>
-        <div class="row mt-3 ">
-            <div class=" col-sm-12 col-md-6 p-5 text-center">
-                <img src="img/portada1.jpg" alt="" width="350px" height="500px">
-            </div>
-            <div class=" col-sm-12 col-md-6 p-5 d-flex flex-column">
-                <h2>Sistema de seguimiento de casos de mesa de ayuda.</h2>
-                <div class="mt-3">
+    <main class="d-flex justify-content-center flex-column  m-auto">
+        <div class="new container">
+            <p class=" ">NOTA: Para generar el Onsite debes limpiar la cache del navegador una unica vez</p>
 
-                    <h4>Generar Onsite de Diagnostico</h4>
-                    <h4>Garantias</h4>
-                    <h4>Repuestos</h4>
-                    <h4>Pendientes</h4>
-                    <h4>Cerrados</h4>
-                </div>
-            </div>
         </div>
+        <h3 class="my-4 text-center">Onsite de Diagnostico V3</h3>
+
+        <div class="container text-center">
+            <p class=" ">Formato de Diagnostico Fecha Versión: en Actualizacion</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
-
-    <!-----------------------------------------------------------------------------------------
-                                           footer
-    --------------------------------------------------------------------------------------------- -->
 
     <!-----------------------------------------------------------------------------------------
                                            footer
@@ -113,17 +123,12 @@
         </footer>
     </div>
 
+
+
+
     <script src="js/app.js"></script>
-
-
-
-
-    <!-----------------------------------------------------------------------------------------
-                                           final
-    --------------------------------------------------------------------------------------------- -->
-
-
     <script src="js/bundle.min.js"></script>
+
 </body>
 
 </html>
