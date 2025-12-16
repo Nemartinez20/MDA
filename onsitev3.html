@@ -89,7 +89,7 @@
             <h3 class="my-4 text-center">Onsite de Diagnostico V3</h3>
 
             <div class="container text-center">
-                <p class=" ">Formato de Diagnostico Fecha Versión: 25-08-2024</p>
+                <p class=" ">Formato de Diagnostico Fecha Versión: 15/12/2025</p>
             </div>
             <div class="container">
                 <form id="form" class="formulario  row  p-3 mb-5 " method="POST">
@@ -269,19 +269,6 @@
                             <label for="modeloequipo" class="form-label">Modelo Equipo</label>
                             <input type="text" class="form-control color" name="motivo" id="modeloequipo" />
                         </div>
-
-
-                        <div class="col-12 col-md-5">
-                            <label for="antivirus" class="form-label">Antivirus</label>
-                            <input type="text" class="form-control color" name="antivirus" id="antivirus" />
-                        </div>
-
-                        <div class="col-12 col-md-5">
-                            <label for="versionantivirus" class="form-label">Version Antivirus</label>
-                            <input type="text" class="form-control color" name="versionantivirus"
-                                id="versionantivirus" />
-                        </div>
-
                         <div class="col-12 col-md-5">
 
                         </div>
@@ -291,7 +278,7 @@
 
                     <!-- -------------------------------------------------------------------
                         Lista de Verificación (únicamente para equipos de cómputo)
-        ------------------------------------------------------------------------------->
+                     ------------------------------------------------------------------------------->
 
 
                     <fieldset class="reset mt-2 w-100 d-flex justify-content-evenly flex-wrap ">
@@ -302,30 +289,29 @@
                             <input type="text" class="form-control color" name="sistemaoperativo"
                                 id="sistemaoperativo" />
                         </div>
-
-                        <!-- <div class="col-12 col-md-5">
-                        <label for="antivirus" class="form-label">Antivirus Actualizado:</label>
-                        <input type="text" class="form-control color" name="AntivirusActualizado" id="AntivirusActualizado" />
-                    </div> -->
-                        <div class="col-12 col-md-5">
-                            <label for="respuesta">Antivirus Actualizado:</label>
-                            <select class="form-select color" name="AntivirusActualizado" id="AntivirusActualizado"
-                                required>
-                                <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
-                            </select>
-                        </div>
-
                         <div class="col-12 col-md-5 d-none">
                             <label for="antivirus" class="form-label">Antivirus</label>
                             <input type="text" class="form-control color" name="antivirus" id="antivirus" />
                         </div>
+
                         <div class="col-12 col-md-5">
                             <label for="versionantivirus" class="form-label">Version Antivirus</label>
                             <input type="text" class="form-control color" name="versionantivirus"
                                 id="versionantivirus" />
                         </div>
+
+                        <div class="col-12 col-md-5">
+                            <label for="respuesta">Antivirus Actualizado:</label>
+                            <select class="form-select color" name="AntivirusActualizado" id="AntivirusActualizado"
+                                required>
+                                <option value="">---Selecione---</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </div>
+
+
+
 
 
 
@@ -333,24 +319,24 @@
                             <label for="respuesta">Agente Ivanti:</label>
                             <select class="form-select color" name="AgenteIvanti" id="AgenteIvanti" required>
                                 <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
                         <div class="col-12 col-md-5">
                             <label for="respuesta">Office 365:</label>
-                            <select class="form-select color" aria-label="Default select example">
+                            <select class="form-select color" name="Office365" id="Office365" required>
                                 <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
                         <div class="col-12 col-md-5">
                             <label for="respuesta">Equipo en Dominio:</label>
-                            <select class="form-select color" aria-label="Default select example">
+                            <select class="form-select color" name="EquipoenDominio" id="EquipoenDominio" required>
                                 <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
 
@@ -375,16 +361,16 @@
                             <label for="respuesta">Requiere Repuesto (Marque X)</label>
                             <select class="form-select color" name="requiereRepuesto" id="requiereRepuesto" required>
                                 <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
                         <div class="col-12 col-md-5">
                             <label for="respuesta">Requiere Equipo de Continuidad (Marque X)</label>
                             <select class="form-select color" name="requiereEquipo" id="requiereEquipo" required>
                                 <option value="">---Selecione---</option>
-                                <option value="x">Si</option>
-                                <option value="_________">No</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
 
@@ -415,10 +401,7 @@
                                 id="solucion"></textarea>
                         </div>
 
-                        <!-- <div class="col-11  ">
-                        <label for="observacioncliente" class="form-label">Observacion del Cliente</label>
-                        <textarea class="form-control color" aria-label="With textarea" name="observacioncliente" id="observacioncliente"></textarea>
-                    </div> -->
+
 
 
 

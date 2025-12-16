@@ -17,17 +17,17 @@ let ingenieroasignado = document.getElementById("ingenieroasignado");
 let cedulaingenieroasignado = document.getElementById(
   "cedulaingenieroasignado"
 );
-let tiposervicio = document.getElementById("tiposervicio");
+// let tiposervicio = document.getElementById("tiposervicio");
 let placaequipo = document.getElementById("placaequipo");
 let serialequipo = document.getElementById("serialequipo");
 let marcaequipo = document.getElementById("marcaequipo");
 let modeloequipo = document.getElementById("modeloequipo");
 let sistemaoperativo = document.getElementById("sistemaoperativo");
-let antivirus = document.getElementById("antivirus");
+// let antivirus = document.getElementById("antivirus");
 let versionantivirus = document.getElementById("versionantivirus");
 let diagnostico = document.getElementById("diagnostico");
 let solucion = document.getElementById("solucion");
-let observacioncliente = document.getElementById("observacioncliente");
+// let observacioncliente = document.getElementById("observacioncliente");
 // let recomendacionesing = document.getElementById("recomendacionesing");
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -97,9 +97,9 @@ function eventos() {
   cedulaingenieroasignado.addEventListener("input", () => {
     cambiarEstilo(cedulaingenieroasignado);
   });
-  tiposervicio.addEventListener("input", () => {
-    cambiarEstilo(tiposervicio);
-  });
+  // tiposervicio.addEventListener("input", () => {
+  //   cambiarEstilo(tiposervicio);
+  // });
   placaequipo.addEventListener("input", () => {
     cambiarEstilo(placaequipo);
   });
@@ -115,9 +115,9 @@ function eventos() {
   sistemaoperativo.addEventListener("input", () => {
     cambiarEstilo(sistemaoperativo);
   });
-  antivirus.addEventListener("input", () => {
-    cambiarEstilo(antivirus);
-  });
+  // antivirus.addEventListener("input", () => {
+  //   cambiarEstilo(antivirus);
+  // });
   versionantivirus.addEventListener("input", () => {
     cambiarEstilo(versionantivirus);
   });
@@ -127,9 +127,9 @@ function eventos() {
   solucion.addEventListener("input", () => {
     cambiarEstilo(solucion);
   });
-  observacioncliente.addEventListener("input", () => {
-    cambiarEstilo(observacioncliente);
-  });
+  // observacioncliente.addEventListener("input", () => {
+  //   cambiarEstilo(observacioncliente);
+  // });
   // recomendacionesing.addEventListener("input", () => {
   //   cambiarEstilo(recomendacionesing);
   // });
@@ -361,17 +361,27 @@ async function llenarPDF() {
   let cedulaingenieroasignado = document.getElementById(
     "cedulaingenieroasignado"
   ).value;
-  let tiposervicio = document.getElementById("tiposervicio").value;
+  // let tiposervicio = document.getElementById("tiposervicio").value;
   let placaequipo = document.getElementById("placaequipo").value;
   let serialequipo = document.getElementById("serialequipo").value;
   let marcaequipo = document.getElementById("marcaequipo").value;
   let modeloequipo = document.getElementById("modeloequipo").value;
+
   let sistemaoperativo = document.getElementById("sistemaoperativo").value;
-  let antivirus = document.getElementById("antivirus").value;
+  // let antivirus = document.getElementById("antivirus").value;
   let versionantivirus = document.getElementById("versionantivirus").value;
+  let AntivirusActualizado = document.getElementById(
+    "AntivirusActualizado"
+  ).value;
+  let AgenteIvanti = document.getElementById("AgenteIvanti").value;
+  let Office365 = document.getElementById("Office365").value;
+  let EquipoenDominio = document.getElementById("EquipoenDominio").value;
+  let requiereRepuesto = document.getElementById("requiereRepuesto").value;
+  let requiereEquipo = document.getElementById("requiereEquipo").value;
+
   let diagnostico = document.getElementById("diagnostico").value;
   let solucion = document.getElementById("solucion").value;
-  let observacioncliente = document.getElementById("observacioncliente").value;
+  // let observacioncliente = document.getElementById("observacioncliente").value;
   // let recomendacionesing = document.getElementById("recomendacionesing").value;
 
   //Calificacion
@@ -446,7 +456,7 @@ async function llenarPDF() {
       ==========================================================================*/
 
   // Ruta del PDF existente
-  const pdfUrl = "FORMATO.pdf";
+  const pdfUrl = "FORMATOODV3 L.pdf";
   // Cargar el PDF existente
   const existingPdfBytes = await fetch(pdfUrl).then((res) => res.arrayBuffer()); //para obtenerlo
   const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes); //para cargar el pdf
@@ -481,7 +491,7 @@ async function llenarPDF() {
     //Imprimir en el pdf
     page.drawImage(image1, {
       x: 50, // Posición X de la imagen
-      y: 122, // Posición Y de la imagen
+      y: 180, // Posición Y de la imagen
       width: imageWidth,
       height: imageHeight,
       color: rgb(1, 0, 0), // Rojo
@@ -504,7 +514,7 @@ async function llenarPDF() {
     //Imprimir en el pdf
     page.drawImage(image2, {
       x: 350, // Posición X de la imagen
-      y: 122, // Posición Y de la imagen
+      y: 180, // Posición Y de la imagen
       width: imageWidth,
       height: imageHeight,
       color: rgb(1, 0, 0), // Rojo
@@ -557,19 +567,19 @@ async function llenarPDF() {
                             IMPRIMIR VARIABLES AL PDF
       ==========================================================================*/
   const lineHeight = 12; // Ajusta este valor para aumentar/disminuir el espacio entre líneas
-  drawTextWithLines(falla, 22, 707, 9, lineHeight);
+  drawTextWithLines(falla, 23, 736, 9, lineHeight);
 
   diagnosticofinal = `Información de Diagnóstico:   ${diagnostico}`;
   //   getFillColor(diagnosticofinal, 10, 20, "rgb(255, 0, 0)");
-  drawTextWithLines(diagnosticofinal, 22, 486, 9, lineHeight);
+  drawTextWithLines(diagnosticofinal, 22, 489, 9, lineHeight);
 
   const palabra = "Solución Entregada:  ";
 
   solucionfinal = `${palabra} ${solucion}`;
-  drawTextWithLines(solucionfinal, 22, 426, 9, lineHeight);
+  drawTextWithLines(solucionfinal, 22, 430, 9, lineHeight);
 
-  observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
-  drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
+  // observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
+  // drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
 
   // Añadir texto al PDF con interlineado
   const drawTextWithLines2 = (text, x, y, fontSize, lineHeight) => {
@@ -583,94 +593,141 @@ async function llenarPDF() {
   //   observacionclientefinal = `OSbservación por el Cliente: ${solucion}`;
   // drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
 
-  page.drawText(ncaso, { x: 110, y: 805 });
-  page.drawText(fechaaperturadecaso, { x: 102, y: 793 });
-  page.drawText(horaaperturadecaso, { x: 287, y: 794 });
-  page.drawText(seccional, { x: 100, y: 767 });
-  page.drawText(ccsolicitante, { x: 100, y: 754 });
-  page.drawText(solicitante, { x: 355, y: 767 });
-  page.drawText(ciudad, { x: 355, y: 754 });
-  page.drawText(direccion, { x: 100, y: 743 });
-  page.drawText(telefono, { x: 355, y: 743 });
-  page.drawText(email, { x: 100, y: 732 });
-  page.drawText(despacho, { x: 355, y: 732 });
+  page.drawText(ncaso, { x: 130, y: 833 });
+  page.drawText(fechaaperturadecaso, { x: 132, y: 821 });
+  page.drawText(horaaperturadecaso, { x: 182, y: 821 });
+  page.drawText(seccional, { x: 112, y: 795 });
+  page.drawText(ccsolicitante, { x: 112, y: 784 });
+  page.drawText(solicitante, { x: 360, y: 795 });
+  page.drawText(ciudad, { x: 360, y: 784 });
+  page.drawText(direccion, { x: 112, y: 772 });
+  page.drawText(telefono, { x: 360, y: 772 });
+  page.drawText(email, { x: 112, y: 760 });
+  page.drawText(despacho, { x: 360, y: 760 });
   //   page.drawText(falla, { x: 22, y: 708 });
-  page.drawText(fechaatenciondecaso, { x: 110, y: 647 });
-  page.drawText(horaatenciondecaso, { x: 345, y: 647 });
-  page.drawText(ingenieroasignado, { x: 100, y: 634 });
-  page.drawText(tiposervicio, { x: 345, y: 634 });
-  page.drawText(placaequipo, { x: 100, y: 608 });
-  page.drawText(serialequipo, { x: 341, y: 608 });
-  page.drawText(marcaequipo, { x: 100, y: 596 });
-  page.drawText(modeloequipo, { x: 341, y: 596 });
-  page.drawText(sistemaoperativo, { x: 100, y: 585 });
-  page.drawText(antivirus, { x: 341, y: 585 });
-  page.drawText(versionantivirus, { x: 526, y: 585 });
+  page.drawText(fechaatenciondecaso, { x: 151, y: 662 });
+  page.drawText(horaatenciondecaso, { x: 205, y: 662 });
+  page.drawText(ingenieroasignado, { x: 151, y: 650 });
+  // page.drawText(tiposervicio, { x: 345, y: 634 });
+  page.drawText(placaequipo, { x: 113, y: 625 });
+  page.drawText(serialequipo.toUpperCase(), { x: 341, y: 625 });
+  page.drawText(marcaequipo, { x: 113, y: 614 });
+  page.drawText(modeloequipo, { x: 341, y: 614 });
+  page.drawText(sistemaoperativo, { x: 113, y: 576 });
+  // page.drawText(antivirus, { x: 341, y: 585 });
+  page.drawText(versionantivirus, { x: 490, y: 576 });
+
+  // Lista de Verificación (únicamente para equipos de cómputo)
+
+  // if (AntivirusActualizado === "SI") {
+  //   AntivirusActualizado = "X";
+  //   console.log(AntivirusActualizado);
+  //   page.drawText(AntivirusActualizado, { x: 369, y: 580 });
+  // } else if (AntivirusActualizado === "NO") {
+  //   AntivirusActualizado = "____";
+  //   console.log(AntivirusActualizado);
+
+  //   page.drawText(AntivirusActualizado, { x: 362, y: 585 });
+  // } else {
+  //   AntivirusActualizado = "NADA";
+  //   console.log(AntivirusActualizado);
+  // }
+
+  function imprimirListaVerificacion(variableInput, SX, SY, NX, NY) {
+    if (variableInput === "SI") {
+      variableInput = "X";
+      console.log(variableInput);
+      page.drawText(variableInput, { x: SX, y: SY });
+    } else if (variableInput === "NO") {
+      variableInput = "____";
+      console.log(variableInput);
+
+      page.drawText(variableInput, { x: NX, y: NY });
+    } else {
+      variableInput = "NADA";
+      console.log(variableInput);
+    }
+  }
+
+  imprimirListaVerificacion(AntivirusActualizado, 369, 580, 362, 585);
+  imprimirListaVerificacion(AgenteIvanti, 167, 558, 162, 562);
+  imprimirListaVerificacion(Office365, 369, 559, 361, 564);
+  imprimirListaVerificacion(EquipoenDominio, 530, 557, 525, 564);
+  imprimirListaVerificacion(requiereRepuesto, 169, 528, 169, 532);
+  imprimirListaVerificacion(requiereEquipo, 452, 528, 452, 532);
+  // page.drawText(AgenteIvanti, { x: 167, y: 558 });
+  // page.drawText(Office365, { x: 369, y: 559 });
+  // page.drawText(EquipoenDominio, { x: 530, y: 559 });
+
+  // page.drawText(requiereRepuesto, { x: 169, y: 528 });
+  // page.drawText(requiereEquipo, { x: 452, y: 528 });
+
   //   page.drawText(diagnostico, { x: 149, y: 486 });
   //   page.drawText(solucion, { x: 117, y: 426 });
   //   page.drawText(observacioncliente, { x: 145, y: 354 });
   //   page.drawText(recomendacionesing, { x: 24, y: 282 });
-  page.drawText(solicitante, { x: 393, y: 182 });
-  page.drawText(ingenieroasignado, { x: 115, y: 182 });
-  page.drawText(ccsolicitante, { x: 365, y: 101 });
-  page.drawText(cedulaingenieroasignado, { x: 60, y: 101 });
+  // page.drawText(solicitante, { x: 393, y: 182 });
+  // page.drawText(ingenieroasignado, { x: 115, y: 182 });
+  page.drawText(ccsolicitante, { x: 380, y: 160 });
+  page.drawText(cedulaingenieroasignado, { x: 57, y: 160 });
 
   // Calificacion
   calidisposicion1 = "X";
 
   if (calidisposicion === "1") {
-    page.drawText(calidisposicion1, { x: 475, y: 230 });
+    page.drawText(calidisposicion1, { x: 477, y: 331 });
   } else if (calidisposicion === "2") {
-    page.drawText(calidisposicion1, { x: 500, y: 230 });
+    page.drawText(calidisposicion1, { x: 503, y: 331 });
   } else if (calidisposicion === "3") {
-    page.drawText(calidisposicion1, { x: 529, y: 230 });
+    page.drawText(calidisposicion1, { x: 527, y: 331 });
   } else if (calidisposicion === "4") {
-    page.drawText(calidisposicion1, { x: 555, y: 230 });
+    page.drawText(calidisposicion1, { x: 552, y: 331 });
   } else if (calidisposicion === "5") {
-    page.drawText(calidisposicion1, { x: 577, y: 230 });
+    page.drawText(calidisposicion1, { x: 577, y: 331 });
   }
   // Conocimiento
   calconocimiento1 = "X";
 
   if (calconocimiento === "1") {
-    page.drawText(calconocimiento1, { x: 475, y: 218 });
+    page.drawText(calconocimiento1, { x: 477, y: 321 });
   } else if (calconocimiento === "2") {
-    page.drawText(calconocimiento1, { x: 500, y: 218 });
+    page.drawText(calconocimiento1, { x: 503, y: 321 });
   } else if (calconocimiento === "3") {
-    page.drawText(calconocimiento1, { x: 529, y: 218 });
+    page.drawText(calconocimiento1, { x: 527, y: 321 });
   } else if (calconocimiento === "4") {
-    page.drawText(calconocimiento1, { x: 555, y: 218 });
+    page.drawText(calconocimiento1, { x: 552, y: 321 });
   } else if (calconocimiento === "5") {
-    page.drawText(calconocimiento1, { x: 577, y: 218 });
+    page.drawText(calconocimiento1, { x: 577, y: 321 });
   }
   // Conocimiento
   caltiempo1 = "X";
 
   if (caltiempo === "1") {
-    page.drawText(caltiempo1, { x: 475, y: 206 });
+    page.drawText(caltiempo1, { x: 477, y: 309 });
   } else if (caltiempo === "2") {
-    page.drawText(caltiempo1, { x: 500, y: 206 });
+    page.drawText(caltiempo1, { x: 503, y: 309 });
   } else if (caltiempo === "3") {
-    page.drawText(caltiempo1, { x: 529, y: 206 });
+    page.drawText(caltiempo1, { x: 527, y: 309 });
   } else if (caltiempo === "4") {
-    page.drawText(caltiempo1, { x: 555, y: 206 });
+    page.drawText(caltiempo1, { x: 552, y: 309 });
   } else if (caltiempo === "5") {
-    page.drawText(caltiempo1, { x: 577, y: 206 });
+    page.drawText(caltiempo1, { x: 577, y: 309 });
   }
   // Conocimiento
   calinformacion1 = "X";
 
   if (calinformacion === "1") {
-    page.drawText(calinformacion1, { x: 475, y: 196 });
+    page.drawText(calinformacion1, { x: 477, y: 297 });
   } else if (calinformacion === "2") {
-    page.drawText(calinformacion1, { x: 500, y: 196 });
+    page.drawText(calinformacion1, { x: 503, y: 297 });
   } else if (calinformacion === "3") {
-    page.drawText(calinformacion1, { x: 529, y: 196 });
+    page.drawText(calinformacion1, { x: 527, y: 297 });
   } else if (calinformacion === "4") {
-    page.drawText(calinformacion1, { x: 555, y: 196 });
+    page.drawText(calinformacion1, { x: 552, y: 297 });
   } else if (calinformacion === "5") {
-    page.drawText(calinformacion1, { x: 577, y: 196 });
+    page.drawText(calinformacion1, { x: 577, y: 297 });
   }
+
   // Serializar el documento PDF a bytes
   const modifiedPdfBytes = await pdfDoc.save();
 
