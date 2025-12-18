@@ -115,6 +115,24 @@ function eventos() {
   sistemaoperativo.addEventListener("input", () => {
     cambiarEstilo(sistemaoperativo);
   });
+  AntivirusActualizado.addEventListener("input", () => {
+    cambiarEstilo(AntivirusActualizado);
+  });
+  AgenteIvanti.addEventListener("input", () => {
+    cambiarEstilo(AgenteIvanti);
+  });
+  Office365.addEventListener("input", () => {
+    cambiarEstilo(Office365);
+  });
+  EquipoenDominio.addEventListener("input", () => {
+    cambiarEstilo(EquipoenDominio);
+  });
+  requiereRepuesto.addEventListener("input", () => {
+    cambiarEstilo(requiereRepuesto);
+  });
+  requiereEquipo.addEventListener("input", () => {
+    cambiarEstilo(requiereEquipo);
+  });
   // antivirus.addEventListener("input", () => {
   //   cambiarEstilo(antivirus);
   // });
@@ -127,9 +145,9 @@ function eventos() {
   solucion.addEventListener("input", () => {
     cambiarEstilo(solucion);
   });
-  // observacioncliente.addEventListener("input", () => {
-  //   cambiarEstilo(observacioncliente);
-  // });
+  observacioncliente.addEventListener("input", () => {
+    cambiarEstilo(observacioncliente);
+  });
   // recomendacionesing.addEventListener("input", () => {
   //   cambiarEstilo(recomendacionesing);
   // });
@@ -381,7 +399,7 @@ async function llenarPDF() {
 
   let diagnostico = document.getElementById("diagnostico").value;
   let solucion = document.getElementById("solucion").value;
-  // let observacioncliente = document.getElementById("observacioncliente").value;
+  let observacioncliente = document.getElementById("observacioncliente").value;
   // let recomendacionesing = document.getElementById("recomendacionesing").value;
 
   //Calificacion
@@ -578,17 +596,19 @@ async function llenarPDF() {
   solucionfinal = `${palabra} ${solucion}`;
   drawTextWithLines(solucionfinal, 22, 430, 9, lineHeight);
 
-  // observacionclientefinal = `OSbservación por el Cliente:   ${observacioncliente}`;
-  // drawTextWithLines(observacionclientefinal, 22, 354, 9, lineHeight);
-
   // Añadir texto al PDF con interlineado
   const drawTextWithLines2 = (text, x, y, fontSize, lineHeight) => {
-    const maxWidth = 330;
+    const maxWidth = 450;
     const lines = splitTextIntoLines(text, fontSize, maxWidth);
     lines.forEach((line, index) => {
       page.drawText(line, { x, y: y - lineHeight * index, size: fontSize });
     });
   };
+
+  const lineHeight2 = 10; // Ajusta este valor para aumentar/disminuir el espacio entre líneas
+
+  observacionclientefinal = `Observaciones Cliente (Opcional):   ${observacioncliente}`;
+  drawTextWithLines2(observacionclientefinal, 241, 285, 9, lineHeight2);
 
   //   observacionclientefinal = `OSbservación por el Cliente: ${solucion}`;
   // drawTextWithLines2(recomendacionesing, 22, 282, 9, lineHeight);
@@ -612,24 +632,24 @@ async function llenarPDF() {
   page.drawText(ncaso, { x: 130, y: 833 });
   page.drawText(fechaaperturadecaso, { x: 132, y: 821 });
   page.drawText(horaaperturadecaso, { x: 182, y: 821 });
-  page.drawText(seccional, { x: 112, y: 795 });
-  page.drawText(ccsolicitante, { x: 112, y: 784 });
-  page.drawText(solicitante, { x: 360, y: 795 });
-  page.drawText(ciudad, { x: 360, y: 784 });
-  page.drawText(direccion, { x: 112, y: 772 });
-  page.drawText(telefono, { x: 360, y: 772 });
-  page.drawText(email, { x: 112, y: 760 });
-  page.drawText(despacho, { x: 360, y: 760 });
+  page.drawText(seccional, { x: 101, y: 796 });
+  page.drawText(ccsolicitante, { x: 101, y: 784 });
+  page.drawText(solicitante, { x: 356, y: 796 });
+  page.drawText(ciudad, { x: 356, y: 784 });
+  page.drawText(direccion, { x: 101, y: 772 });
+  page.drawText(telefono, { x: 356, y: 772 });
+  page.drawText(email, { x: 101, y: 760 });
+  page.drawText(despacho, { x: 356, y: 760 });
   //   page.drawText(falla, { x: 22, y: 708 });
   page.drawText(fechaatenciondecaso, { x: 151, y: 662 });
   page.drawText(horaatenciondecaso, { x: 205, y: 662 });
   page.drawText(ingenieroasignado, { x: 151, y: 650 });
   // page.drawText(tiposervicio, { x: 345, y: 634 });
-  page.drawText(placaequipo, { x: 113, y: 625 });
+  page.drawText(placaequipo, { x: 101, y: 625 });
   page.drawText(serialequipo.toUpperCase(), { x: 341, y: 625 });
-  page.drawText(marcaequipo, { x: 113, y: 614 });
+  page.drawText(marcaequipo, { x: 101, y: 614 });
   page.drawText(modeloequipo, { x: 341, y: 614 });
-  page.drawText(sistemaoperativo, { x: 113, y: 576 });
+  page.drawText(sistemaoperativo, { x: 101, y: 576 });
   // page.drawText(antivirus, { x: 341, y: 585 });
   page.drawText(versionantivirus, { x: 490, y: 576 });
 
@@ -668,7 +688,7 @@ async function llenarPDF() {
   }
 
   imprimirListaVerificacion(AntivirusActualizado, 369, 580, 362, 585);
-  imprimirListaVerificacion(AgenteIvanti, 167, 558, 162, 562);
+  imprimirListaVerificacion(AgenteIvanti, 160, 558, 151, 562);
   imprimirListaVerificacion(Office365, 369, 559, 361, 564);
   imprimirListaVerificacion(EquipoenDominio, 530, 559, 525, 564);
 
@@ -806,7 +826,7 @@ async function llenarPDF() {
   downloadLink.href = URL.createObjectURL(
     new Blob([modifiedPdfBytes], { type: "application/pdf" })
   );
-  downloadLink.download = `Onsite_${ncaso}.pdf`;
+  downloadLink.download = `ON-${ncaso}.pdf`;
   downloadLink.click();
 }
 
